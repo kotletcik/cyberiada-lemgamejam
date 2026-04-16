@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5jy6l2sxg2p8"]
+
+[ext_resource type="Script" uid="uid://dvotb7rsxllt7" path="res://Scripts/Valk/player_controller.gd" id="1_um8lo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um8lo"]
+
+[sub_resource type="Gradient" id="Gradient_um8lo"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x3d5u"]
+gradient = SubResource("Gradient_um8lo")
+
+[node name="Player" type="CharacterBody2D" unique_id=1444099841]
+script = ExtResource("1_um8lo")
+speed = 2.0
+metadata/_custom_type_script = "uid://dvotb7rsxllt7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]
+shape = SubResource("RectangleShape2D_um8lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449519558]
+position = Vector2(8128.002, 129)
+scale = Vector2(189.5, 9365)
+texture = SubResource("GradientTexture1D_x3d5u")
