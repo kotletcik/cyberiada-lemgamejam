@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nmxm0g05pf8e"]
+
+[ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="1_nkfjo"]
+
+[node name="ValkScene" type="Node2D" unique_id=401155208]
+
+[node name="Player" parent="." unique_id=1444099841 instance=ExtResource("1_nkfjo")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1422013748]
