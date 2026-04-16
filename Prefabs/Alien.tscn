@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dilwqxgvchdn4"]
+
+[ext_resource type="Script" uid="uid://jjumsfr7ua1n" path="res://Scripts/PJ/alien.gd" id="1_mwacy"]
+[ext_resource type="Texture2D" uid="uid://b1fcvsyxdmucx" path="res://Assets/Placeholders/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Idle/Idle-Sheet.png" id="2_rh6o7"]
+[ext_resource type="Script" uid="uid://bh6eavjcd01dx" path="res://Scripts/PJ/Animation.gd" id="3_1kd1h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwnw3"]
+atlas = ExtResource("2_rh6o7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro37k"]
+atlas = ExtResource("2_rh6o7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg2yo"]
+atlas = ExtResource("2_rh6o7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avy1w"]
+atlas = ExtResource("2_rh6o7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnhev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwnw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro37k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg2yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avy1w")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Alien" type="CharacterBody2D" unique_id=1972185887]
+script = ExtResource("1_mwacy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724243456]
+shape = SubResource("CapsuleShape2D_ewn6o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979880464]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rnhev")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 2
+frame_progress = 0.9526387
+script = ExtResource("3_1kd1h")
