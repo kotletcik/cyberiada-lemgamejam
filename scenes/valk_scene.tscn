@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://nmxm0g05pf8e"]
 
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="1_nkfjo"]
+[ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="2_ls6vv"]
 
 [node name="ValkScene" type="Node2D" unique_id=401155208]
 
 [node name="Player" parent="." unique_id=1444099841 instance=ExtResource("1_nkfjo")]
+speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1422013748]
+
+[node name="MistakeManager" type="Node" parent="." unique_id=188036729 node_paths=PackedStringArray("player", "safe_zone")]
+script = ExtResource("2_ls6vv")
+player = NodePath("../Player")
+safe_zone = NodePath("../SafeZone")
+safe_zone_distance = 10.0
+light_mode = true
+mistake_timer = 2.0
+metadata/_custom_type_script = "uid://bud8t0ommmhrf"
+
+[node name="SafeZone" type="Node2D" parent="." unique_id=790665712]
