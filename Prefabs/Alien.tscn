@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dilwqxgvchdn4"]
 
-[ext_resource type="Script" uid="uid://jjumsfr7ua1n" path="res://Scripts/PJ/alien.gd" id="1_mwacy"]
+[ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="1_mwacy"]
 [ext_resource type="Texture2D" uid="uid://b1fcvsyxdmucx" path="res://Assets/Placeholders/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Idle/Idle-Sheet.png" id="2_rh6o7"]
-[ext_resource type="Script" uid="uid://bh6eavjcd01dx" path="res://Scripts/PJ/Animation.gd" id="3_1kd1h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
 
@@ -42,6 +41,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_oa450"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Alien" type="CharacterBody2D" unique_id=1972185887]
 script = ExtResource("1_mwacy")
 
@@ -55,4 +68,4 @@ animation = &"Idle"
 autoplay = "Idle"
 frame = 2
 frame_progress = 0.9526387
-script = ExtResource("3_1kd1h")
+script = SubResource("GDScript_oa450")
