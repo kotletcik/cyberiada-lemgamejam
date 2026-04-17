@@ -5,7 +5,6 @@ var speed: float = 100;
 @export var night_speed: float;
 @export var day_speed: float;
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
-@export var speed: float;
 @export var interaction_range: float;
 
 var movement_locked: bool = false;
