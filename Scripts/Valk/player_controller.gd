@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 		var tasks = get_tree().get_nodes_in_group("tasks");
 		for i in range(0, tasks.size()):
 			var scene_task: SceneTask = tasks[i] as SceneTask;
+			if(!scene_task.visible): continue;
 			if(scene_task.global_position.distance_to(global_position) < interaction_range):
 				scene_task.complete_task();
 				TaskManager.instance.complete_task();
