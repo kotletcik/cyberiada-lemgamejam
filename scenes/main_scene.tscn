@@ -290,6 +290,7 @@ metadata/_custom_type_script = "uid://8hdpjb43xh8r"
 z_index = 2
 position = Vector2(-60.999996, 1.9999999)
 scale = Vector2(0.1, 0.1)
+interaction_range = 10.0
 
 [node name="MistakeManager" type="Node" parent="." unique_id=1424010120 node_paths=PackedStringArray("player", "safe_zone")]
 script = ExtResource("5_c1pb6")
