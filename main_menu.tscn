@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://8wrdbefim2cs"]
+
+[ext_resource type="Texture2D" uid="uid://mhdkjyys04au" path="res://Assets/Placeholders/kula.png" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://bhcs7fvtnvnti" path="res://start.gd" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://da6aelmfua87s" path="res://Assets/Placeholders/name.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cmlcr5xr6cy1y" path="res://Assets/UI/linka.png" id="3_glbon"]
+[ext_resource type="Script" uid="uid://bwg5h5lyal0c3" path="res://exit.gd" id="3_nlkkf"]
+
+[node name="Main_menu" type="Control" unique_id=256139611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = 3.0
+offset_right = -53.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=986431484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 331.0
+offset_right = -826.125
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_fu7sn")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_glbon")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=413348279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 354.0
+offset_top = 416.0
+offset_right = -573.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_fu7sn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=585252980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 906.0
+offset_top = 383.0
+offset_right = -22.0
+offset_bottom = -43.59961
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_fu7sn")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_nlkkf")
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=1005003764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 639.0
+offset_top = 289.0
+offset_right = -286.2387
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_fu7sn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=38478459]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -219.0
+offset_right = 1074.0
+offset_bottom = 295.0
+texture = ExtResource("2_jix8l")
+expand_mode = 1
+
+[node name="Linka" type="Sprite2D" parent="." unique_id=1793858037]
+position = Vector2(467, 371.00003)
+scale = Vector2(0.578125, 0.65625)
+texture = ExtResource("3_glbon")
+
+[node name="Linka2" type="Sprite2D" parent="." unique_id=927277935]
+show_behind_parent = true
+position = Vector2(751.00006, 293)
+scale = Vector2(0.6265627, 0.5)
+texture = ExtResource("3_glbon")
+
+[node name="Linka3" type="Sprite2D" parent="." unique_id=1110056536]
+show_behind_parent = true
+position = Vector2(210.00002, 307)
+scale = Vector2(0.70624995, 0.53437495)
+texture = ExtResource("3_glbon")
+
+[node name="Linka4" type="Sprite2D" parent="." unique_id=903651571]
+position = Vector2(1015, 342)
+scale = Vector2(0.6406248, 0.5875001)
+texture = ExtResource("3_glbon")
