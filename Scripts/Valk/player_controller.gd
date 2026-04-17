@@ -18,7 +18,7 @@ func change_speed(on_day: bool):
 	if (!on_day):
 		speed = day_speed
 	else: speed = night_speed
-	print(speed)
+	# print(speed)
 
 func change_movement_lock(value: bool):
 	movement_locked = value;
