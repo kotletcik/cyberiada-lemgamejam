@@ -11,6 +11,8 @@ var general_step_counter:int = 0
 static var instance: Cycle_manager
 @export var black_shader: Sprite2D;
 
+var sound_played: bool = false
+
 func _ready() -> void:
 	if (instance != null):
 		print ("more than one cycle manager exists")
@@ -32,6 +34,12 @@ func _physics_process(delta: float) -> void:
 		timer = 0
 	else:
 		timer += delta
+		var steps_left: int = light_steps_count - general_step_counter;
+		if(steps_left == 2 && timer >= 0.5 && sound_played):
+			if(is_day):
+				SoundManager.instance.play_lights_off();
+			else:
+				SoundManager.instance.play_lights_on();
 
 func switch_light():
 	is_day = !is_day
