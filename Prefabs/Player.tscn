@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5jy6l2sxg2p8"]
+
+[ext_resource type="Script" uid="uid://dvotb7rsxllt7" path="res://Scripts/Valk/player_controller.gd" id="1_um8lo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um8lo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_um8lo"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1444099841]
+script = ExtResource("1_um8lo")
+speed = 10.0
+metadata/_custom_type_script = "uid://dvotb7rsxllt7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]
+shape = SubResource("RectangleShape2D_um8lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449519558]
+scale = Vector2(16, 32)
+texture = SubResource("PlaceholderTexture2D_um8lo")
