@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b1v05hejenbhg" path="res://Assets/UI/controls.png" id="8_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="9_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://cnebpot0w1yov" path="res://Assets/UI/x.png" id="11_flqon"]
-[ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
+[ext_resource type="Script" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
