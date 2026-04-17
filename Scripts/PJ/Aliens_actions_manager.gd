@@ -5,7 +5,7 @@ class_name Aliens_actions_manager
 
 @export var aliens: Array[Alien]
 var current_dance: Alien_dance
-var current_aliens_path: Array[Vector2]
+var current_aliens_path: Array[Node2D]
 var current_dance_name: String
 var is_static: bool
 static var instance: Aliens_actions_manager
@@ -23,8 +23,10 @@ func _ready():
 func give_action_to_aliens():
 	for alien in aliens:
 		var alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static)) % current_aliens_path.size()
+		if (Cycle_manager.instance.current_time_step == Cycle_manager.instance.light_steps_count -1):
+			alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static) - 1) % current_aliens_path.size()
 		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
-		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index], current_dance_name)
+		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index].global_position, current_dance_name)
 		alien.is_static = is_static
 		#if (alien_target_pos_index == current_aliens_path.size() - 1):
 		
