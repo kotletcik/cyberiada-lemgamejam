@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8wrdbefim2cs"]
 
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_oa1go"]
-[ext_resource type="Texture2D" uid="uid://b4os3m1mcjaqr" path="res://Assets/UI/name1.png" id="3_5dd4i"]
 [ext_resource type="Script" uid="uid://bwg5h5lyal0c3" path="res://Scripts/Rysia/button_controller.gd" id="3_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://w60ksmmprhng" path="res://Assets/Sprites/name.png" id="4_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://cmlcr5xr6cy1y" path="res://Assets/UI/linka.png" id="5_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dykg67sqyqe08" path="res://Assets/UI/dance.png" id="6_flqon"]
 [ext_resource type="Texture2D" uid="uid://cu2ariuvxf4r4" path="res://Assets/UI/settings.png" id="7_jk1qb"]
@@ -97,11 +97,12 @@ stretch_mode = 0
 
 [node name="name" type="TextureRect" parent="." unique_id=38478459]
 layout_mode = 0
-offset_left = 160.0
-offset_top = -219.0
-offset_right = 1122.0
-offset_bottom = 295.0
-texture = ExtResource("3_5dd4i")
+offset_left = 217.00003
+offset_top = 37.0
+offset_right = 1179.0
+offset_bottom = 551.0
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("4_lgwnu")
 expand_mode = 1
 
 [node name="Linka" type="Sprite2D" parent="." unique_id=1793858037]
@@ -219,6 +220,7 @@ min_value = -20.0
 max_value = 5.0
 
 [node name="Controls2" type="Control" parent="." unique_id=1114963884]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

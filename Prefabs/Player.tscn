@@ -67,13 +67,16 @@ animations = [{
 script = ExtResource("1_um8lo")
 night_speed = 100.0
 day_speed = 200.0
+interaction_range = 20.0
 metadata/_custom_type_script = "uid://dvotb7rsxllt7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]
+position = Vector2(0, -437)
 shape = SubResource("RectangleShape2D_um8lo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1754188213]
 texture_filter = 1
+position = Vector2(0, -437)
 scale = Vector2(30, 30)
 sprite_frames = SubResource("SpriteFrames_javds")
 animation = &"right_foot"

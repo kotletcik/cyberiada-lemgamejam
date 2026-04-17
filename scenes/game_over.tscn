@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://ch68jrcyanlxj"]
+[gd_scene format=3 uid="uid://d2sah1utxhcth"]
 
 [ext_resource type="Script" path="res://Scripts/Rysia/game_over.gd" id="1_racf3"]
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_wqhvx"]
 [ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="2_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://cpesx5wqhu8lx" path="res://Assets/Sprites/repeat.png" id="4_2jtsn"]
 [ext_resource type="Texture2D" uid="uid://lx74taqgu4nk" path="res://Assets/UI/exit.png" id="4_7m3ot"]
 [ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="5_7m3ot"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_racf3"]
-font_size = 96
+[ext_resource type="Texture2D" uid="uid://rk3084ha8sts" path="res://Assets/Sprites/main_menu.png" id="5_irg28"]
+[ext_resource type="Texture2D" uid="uid://buudd3wqvg0iw" path="res://Assets/Sprites/dance_macabre.png" id="5_v3hpu"]
 
 [node name="GameOver" type="Control" unique_id=285489906]
 layout_mode = 3
@@ -45,6 +45,17 @@ texture_normal = ExtResource("1_wqhvx")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="restart" type="TextureButton" parent="restart" unique_id=2111632739]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = 237.0
+offset_bottom = 237.0
+scale = Vector2(0.825, 0.825)
+texture_normal = ExtResource("4_2jtsn")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="Exit" type="Sprite2D" parent="." unique_id=1973300699]
 top_level = true
 position = Vector2(880, 448.00003)
@@ -61,14 +72,26 @@ texture_normal = ExtResource("1_wqhvx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="." unique_id=1683074369]
+[node name="main_menu" type="TextureButton" parent="main_menu" unique_id=263522573]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 114.0
-offset_right = 1031.0
-offset_bottom = 272.0
-text = "DANCE MACABRE!!!"
-label_settings = SubResource("LabelSettings_racf3")
+offset_left = -24.000002
+offset_top = 25.0
+offset_right = 326.0
+offset_bottom = 242.0
+scale = Vector2(0.725, 0.725)
+texture_normal = ExtResource("5_irg28")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="restart2" type="TextureButton" parent="." unique_id=344160085]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 76.0
+offset_right = 791.0
+offset_bottom = 295.0
+texture_normal = ExtResource("5_v3hpu")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1834537740]
 stream = ExtResource("5_7m3ot")
