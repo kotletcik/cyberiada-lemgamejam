@@ -1,20 +1,80 @@
 [gd_scene format=3 uid="uid://b5jy6l2sxg2p8"]
 
 [ext_resource type="Script" uid="uid://dvotb7rsxllt7" path="res://Scripts/Valk/player_controller.gd" id="1_um8lo"]
+[ext_resource type="Texture2D" uid="uid://dqutmisuxmaxy" path="res://Assets/Sprites/player_idle.png" id="2_shmu5"]
+[ext_resource type="Texture2D" uid="uid://crx6okwfhorkc" path="res://Assets/Sprites/player_left_foot.png" id="3_vxq8l"]
+[ext_resource type="Texture2D" uid="uid://78sufqnfmt6a" path="res://Assets/Sprites/player_right_foot.png" id="4_gg3t4"]
+[ext_resource type="Texture2D" uid="uid://c55o8s7xsleix" path="res://Assets/Sprites/player_left_arm.png" id="5_vxq8l"]
+[ext_resource type="Texture2D" uid="uid://dolnxuvhhtybi" path="res://Assets/Sprites/player_right_arm.png" id="6_gg3t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um8lo"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_um8lo"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_javds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_shmu5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vxq8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gg3t4")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vxq8l")
+}],
+"loop": true,
+"name": &"left_arm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vxq8l")
+}],
+"loop": true,
+"name": &"left_foot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gg3t4")
+}],
+"loop": true,
+"name": &"right_arm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gg3t4")
+}],
+"loop": true,
+"name": &"right_foot",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1444099841]
 script = ExtResource("1_um8lo")
-speed = 10.0
-interaction_range = 10.0
+night_speed = 100.0
+day_speed = 200.0
 metadata/_custom_type_script = "uid://dvotb7rsxllt7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]
 shape = SubResource("RectangleShape2D_um8lo")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449519558]
-scale = Vector2(192, 384)
-texture = SubResource("PlaceholderTexture2D_um8lo")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1754188213]
+texture_filter = 1
+scale = Vector2(30, 30)
+sprite_frames = SubResource("SpriteFrames_javds")
+animation = &"right_foot"
+autoplay = "Idle"

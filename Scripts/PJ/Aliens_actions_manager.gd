@@ -9,7 +9,15 @@ var current_aliens_path: Array[Node2D]
 var current_dance_name: String
 var is_static: bool
 static var instance: Aliens_actions_manager
+var dance_move_counter:= 0
 
+enum dance_moves
+{
+	left_arm,
+	right_arm,
+	left_foot,
+	right_foot
+}
 
 func _ready():
 	if (instance != null):
@@ -23,6 +31,9 @@ func _ready():
 	set_first_indexes()
 	
 func give_action_to_aliens():
+	dance_move_counter += 1
+	if dance_move_counter >= 4:
+		dance_move_counter = 0
 	for alien in aliens:
 		var alien_target_pos_index
 		if (!is_static):
@@ -37,6 +48,7 @@ func give_action_to_aliens():
 		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
 		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index].global_position, current_dance_name)
 		alien.is_static = is_static
+		alien.dance_move = dance_moves.keys()[dance_move_counter]
 		#if (alien_target_pos_index == current_aliens_path.size() - 1):
 		
 			
@@ -63,7 +75,10 @@ func change_dance_to_next(is_day: bool):
 		print (index)
 		current_dance = new_dance
 		current_aliens_path = new_dance.path
-		current_dance_name = new_dance.dance_name
+		if (new_dance.is_static):
+			current_dance_name = "Idle"
+		else: current_dance_name = "Run"
+		
 		is_static = new_dance.is_static
 		
 
@@ -79,7 +94,6 @@ func set_first_indexes():
 		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index].global_position, current_dance_name)
 		alien.is_static = is_static
 		#if (alien_target_pos_index == current_aliens_path.size() - 1):
-		
 			
 		if (alien_target_pos_index == 0):
 			alien.do_current_action_with_teleport()

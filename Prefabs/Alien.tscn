@@ -1,65 +1,19 @@
 [gd_scene format=3 uid="uid://dilwqxgvchdn4"]
 
 [ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="1_mwacy"]
-[ext_resource type="Texture2D" uid="uid://b1fcvsyxdmucx" path="res://Assets/Placeholders/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Idle/Idle-Sheet.png" id="2_rh6o7"]
-[ext_resource type="Texture2D" uid="uid://c86nlmtcws0id" path="res://Assets/Placeholders/Pixel Crawler - Free Pack/Entities/Mobs/Orc Crew/Orc - Rogue/Run/Run-Sheet.png" id="3_mwacy"]
+[ext_resource type="Texture2D" uid="uid://4c3yykbyra33" path="res://Assets/Sprites/alien_idle.png" id="2_mwacy"]
+[ext_resource type="Texture2D" uid="uid://d2v3cj14oc8mh" path="res://Assets/Sprites/alien_left_foot.png" id="3_rh6o7"]
+[ext_resource type="Texture2D" uid="uid://lh6wsnfa4wrd" path="res://Assets/Sprites/alien_right_foot.png" id="4_1kd1h"]
+[ext_resource type="Texture2D" uid="uid://cm84te4ffrskf" path="res://Assets/Sprites/alien_left_arm.png" id="5_ewn6o"]
+[ext_resource type="Texture2D" uid="uid://dchojef0772lf" path="res://Assets/Sprites/alien_right_arm.png" id="6_kwnw3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwnw3"]
-atlas = ExtResource("2_rh6o7")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ro37k"]
-atlas = ExtResource("2_rh6o7")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sg2yo"]
-atlas = ExtResource("2_rh6o7")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_avy1w"]
-atlas = ExtResource("2_rh6o7")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rh6o7"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(0, 32, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kd1h"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(64, 32, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ewn6o"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(128, 32, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rnhev"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(192, 32, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1obcm"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(256, 32, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqmau"]
-atlas = ExtResource("3_mwacy")
-region = Rect2(320, 32, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rnhev"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kwnw3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ro37k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sg2yo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_avy1w")
+"texture": ExtResource("2_mwacy")
 }],
 "loop": true,
 "name": &"Idle",
@@ -67,30 +21,45 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rh6o7")
+"texture": ExtResource("3_rh6o7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1kd1h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ewn6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rnhev")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1obcm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vqmau")
+"texture": ExtResource("4_1kd1h")
 }],
 "loop": true,
 "name": &"Run",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ewn6o")
+}],
 "loop": true,
-"name": &"new_animation",
+"name": &"left_arm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rh6o7")
+}],
+"loop": true,
+"name": &"left_foot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kwnw3")
+}],
+"loop": true,
+"name": &"right_arm",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1kd1h")
+}],
+"loop": true,
+"name": &"right_foot",
 "speed": 5.0
 }]
 
@@ -106,6 +75,7 @@ shape = SubResource("CapsuleShape2D_ewn6o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1979880464]
 z_index = 1
 texture_filter = 1
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rnhev")
-animation = &"new_animation"
+animation = &"left_arm"
 autoplay = "Idle"
