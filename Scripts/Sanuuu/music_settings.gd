@@ -1,6 +1,7 @@
 extends Control
 
 var bus_id : int = AudioServer.get_bus_index("Music")
+var sfx_id : int = AudioServer.get_bus_index("SFX")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,10 @@ func _process(_delta: float) -> void:
 func update_volume():
 	var music_vol = $MusicScrollBar
 	var music_label = $MusicLabel
-	#val value := music_vol.value 
+	var sfx_vol = $SFXScrollBar
+	var sfx_label = $SFXLabel
+
 	AudioServer.set_bus_volume_db(bus_id, music_vol.value)
+	AudioServer.set_bus_volume_db(sfx_id, sfx_vol.value)
 	music_label.text = "Music volume: " + str(int((music_vol.value + 20) / 25 * 100)) + "%"
+	sfx_label.text = "SFX volume: " + str(int((sfx_vol.value + 20) / 25 * 100)) + "%"

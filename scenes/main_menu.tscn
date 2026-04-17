@@ -197,7 +197,26 @@ offset_right = 839.0
 offset_bottom = 155.0
 min_value = -20.0
 max_value = 5.0
-page = 1.5
+
+[node name="SFXLabel" type="Label" parent="Settings/MusicSettings" unique_id=1235774403]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 166.0
+offset_right = 707.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 40
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXScrollBar" type="HScrollBar" parent="Settings/MusicSettings" unique_id=1286668471]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 224.0
+offset_right = 841.0
+offset_bottom = 285.0
+min_value = -20.0
+max_value = 5.0
 
 [node name="Controls2" type="Control" parent="." unique_id=1114963884]
 visible = false

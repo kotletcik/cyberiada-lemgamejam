@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cchueap81i88"]
+
+[ext_resource type="Texture2D" uid="uid://debrtxdbiswqm" path="res://Assets/Piano/piano-orange_1.png" id="2_xnl6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1ym3"]
+size = Vector2(70, 160)
+
+[node name="Node2D" type="Node2D" unique_id=1154092851]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1895360292]
+
+[node name="PianoOrange1" type="Sprite2D" parent="StaticBody2D" unique_id=253703058]
+position = Vector2(-3, -4)
+texture = ExtResource("2_xnl6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2074555820]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_w1ym3")
