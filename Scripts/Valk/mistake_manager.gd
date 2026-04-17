@@ -50,4 +50,4 @@ func register_mistake():
 		GameManager.instance.game_over();
 
 func reset_mistakes_left():
-	mistakes_left = 3;
+	mistakes_left = 10;
