@@ -9,4 +9,3 @@ func _ready():
 
 func complete_task():
 	texture = after_state;
-
