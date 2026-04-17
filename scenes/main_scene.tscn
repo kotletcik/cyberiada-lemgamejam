@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="15_si52b"]
 [ext_resource type="Script" uid="uid://bppxn656e3455" path="res://Scripts/Sanuuu/audio_manager.gd" id="16_k6f3i"]
 [ext_resource type="AudioStream" uid="uid://bl5sbpy1nq05n" path="res://Assets/Audio/PsychoMoves.mp3" id="17_xdqt8"]
+[ext_resource type="Script" uid="uid://cdyuak0tvaegp" path="res://Scripts/Valk/disappear_after_time.gd" id="18_58gk3"]
 [ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="18_adb74"]
 [ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="19_58gk3"]
 [ext_resource type="AudioStream" uid="uid://drbao06dgkox1" path="res://Assets/Audio/TaskDone.mp3" id="20_to7gp"]
@@ -35,6 +36,9 @@ load_path = "res://.godot/imported/redsquare.jpg-eee76869009dfec8707527bb3413fa4
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_01n6w"]
 load_path = "res://.godot/imported/background.png-0fe7fdccbfb840633f2979355b3a644c.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_adb74"]
+font_size = 64
 
 [node name="Node2D" type="Node2D" unique_id=261449112]
 
@@ -405,6 +409,20 @@ offset_bottom = 85.0
 theme_override_font_sizes/font_size = 51
 text = "W"
 
+[node name="Tutorial" type="Label" parent="DanceManager/Dance" unique_id=1138157796]
+layout_mode = 0
+offset_left = -382.0
+offset_top = -238.0
+offset_right = 362.0
+offset_bottom = -150.0
+text = "IDŹ NA SWOJE MIEJSCE!!!"
+label_settings = SubResource("LabelSettings_adb74")
+
+[node name="DisappearAfterTime" type="Node" parent="DanceManager/Dance/Tutorial" unique_id=807193490]
+script = ExtResource("18_58gk3")
+timer = 5.0
+metadata/_custom_type_script = "uid://cdyuak0tvaegp"
+
 [node name="SoundManager" type="Node" parent="." unique_id=1490811696 node_paths=PackedStringArray("bg_music_player")]
 script = ExtResource("16_k6f3i")
 bg_music_player = NodePath("AudioStreamPlayer")
@@ -414,7 +432,6 @@ stream = ExtResource("17_xdqt8")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
-script = ExtResource("16_k6f3i")
 
 [node name="you_win_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1506362342]
 stream = ExtResource("18_adb74")
