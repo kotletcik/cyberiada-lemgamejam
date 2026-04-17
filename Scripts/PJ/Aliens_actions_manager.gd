@@ -32,8 +32,8 @@ func give_action_to_aliens():
 			alien.current_target_pos_index = alien_target_pos_index
 		else: alien_target_pos_index = alien.current_target_pos_index
 		# alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static)) % current_aliens_path.size()
-		if (Cycle_manager.instance.current_time_step == Cycle_manager.instance.light_steps_count -1):
-			alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static) - 1) % current_aliens_path.size()
+		#if (Cycle_manager.instance.current_time_step == Cycle_manager.instance.light_steps_count -1):
+			#alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static) - 1) % current_aliens_path.size()
 		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
 		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index].global_position, current_dance_name)
 		alien.is_static = is_static
