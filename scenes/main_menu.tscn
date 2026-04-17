@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b1v05hejenbhg" path="res://Assets/UI/controls.png" id="8_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="9_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://cnebpot0w1yov" path="res://Assets/UI/x.png" id="11_flqon"]
+[ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
@@ -169,7 +170,37 @@ texture_normal = ExtResource("11_flqon")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="MusicSettings" type="Control" parent="Settings" unique_id=1362718222]
+anchors_preset = 0
+offset_left = 179.0
+offset_top = 290.0
+offset_right = 1137.0
+offset_bottom = 601.0
+script = ExtResource("11_lgwnu")
+
+[node name="MusicLabel" type="Label" parent="Settings/MusicSettings" unique_id=71077913]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 30.0
+offset_right = 707.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicScrollBar" type="HScrollBar" parent="Settings/MusicSettings" unique_id=1004806495]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 94.0
+offset_right = 839.0
+offset_bottom = 155.0
+min_value = -20.0
+max_value = 5.0
+page = 1.5
+
 [node name="Controls2" type="Control" parent="." unique_id=1114963884]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

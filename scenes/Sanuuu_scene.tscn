@@ -12,5 +12,5 @@ bg_music_player = NodePath("AudioStreamPlayer")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager" unique_id=1644839777]
 stream = ExtResource("2_kj3et")
 autoplay = true
-bus = &"Music_main"
-parameters/looping = false
+bus = &"Music"
+parameters/looping = true
