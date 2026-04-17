@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerController
 
 @export var speed: float;
+@export var interaction_range: float;
 
 var movement_locked: bool = false;
 
@@ -22,6 +23,16 @@ func enable_movement_on_night(is_day: bool):
 		print("movement enabled")
 
 func _process(delta: float) -> void:
+
+	if(Input.is_action_just_pressed("Interact")):
+		var tasks = get_tree().get_nodes_in_group("tasks");
+		for i in range(0, tasks.size()):
+			var scene_task: SceneTask = tasks[i] as SceneTask;
+			if(scene_task.global_position.distance_to(global_position) < interaction_range):
+				scene_task.complete_task();
+				TaskManager.instance.complete_task();
+				break;
+
 	if(!movement_locked):
 		var direction: Vector2;
 		direction.x = Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left");
