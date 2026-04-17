@@ -3,10 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="1_rm2fy"]
 [ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_gpest"]
 [ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="3_6merk"]
+[ext_resource type="PackedScene" uid="uid://dni2v5w35jgk6" path="res://Prefabs/Task.tscn" id="3_r3keh"]
 [ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lkq0u"]
 [ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="5_r3keh"]
 [ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_gpest"]
 [ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_6merk"]
+[ext_resource type="Script" path="res://Scripts/Valk/task_manager.gd" id="9_t37iy"]
 
 [node name="Map" type="Node2D" unique_id=261449112]
 
@@ -59,9 +61,20 @@ z_index = 2
 scale = Vector2(0.007, 0.007)
 texture = ExtResource("7_6merk")
 
+[node name="Tasks" type="Node2D" parent="Level" unique_id=320304455]
+
+[node name="Task" parent="Level/Tasks" unique_id=360551569 instance=ExtResource("3_r3keh")]
+position = Vector2(-224, -151)
+
+[node name="Task2" parent="Level/Tasks" unique_id=1688835264 instance=ExtResource("3_r3keh")]
+position = Vector2(216, 0)
+
+[node name="Task3" parent="Level/Tasks" unique_id=1896705387 instance=ExtResource("3_r3keh")]
+position = Vector2(-136, 209)
+
 [node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
 script = ExtResource("2_gpest")
-dances = [NodePath("Dance1")]
+dances = [NodePath("Dance1"), NodePath("Dance2")]
 aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8")]
 
 [node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
@@ -93,3 +106,6 @@ z_index = 1
 position = Vector2(-140.00003, 0)
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("7_6merk")
+
+[node name="TaskManager" type="Node" parent="." unique_id=1750545070]
+script = ExtResource("9_t37iy")
