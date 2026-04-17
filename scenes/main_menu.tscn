@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 [ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="12_flqon"]
 [ext_resource type="Script" uid="uid://clathypbpklmf" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
-[ext_resource type="AudioStream" uid="uid://dij6elht84j2" path="res://Assets/Audio/MenuTemp.mp3" id="13_1ajci"]
+[ext_resource type="AudioStream" uid="uid://djn2mgqpm7jg0" path="res://Assets/Audio/PsychoMenu.mp3" id="13_1ajci"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
