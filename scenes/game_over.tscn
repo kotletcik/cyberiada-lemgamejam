@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbqjpguvt8gmk"]
 
-[ext_resource type="Script" path="res://Scripts/Rysia/game_over.gd" id="1_racf3"]
+[ext_resource type="Script" uid="uid://c5yob53t6efnc" path="res://Scripts/Rysia/game_over.gd" id="1_racf3"]
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_wqhvx"]
 [ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="2_tbwuq"]
 [ext_resource type="Texture2D" uid="uid://cpesx5wqhu8lx" path="res://Assets/Sprites/repeat.png" id="4_2jtsn"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://rk3084ha8sts" path="res://Assets/Sprites/main_menu.png" id="5_irg28"]
 [ext_resource type="Texture2D" uid="uid://buudd3wqvg0iw" path="res://Assets/Sprites/dance_macabre.png" id="5_v3hpu"]
 [ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_v3hpu"]
+[ext_resource type="Script" uid="uid://clathypbpklmf" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="9_o57t2"]
+[ext_resource type="AudioStream" uid="uid://b0fnmdpfao8vh" path="res://Assets/Audio/buttonclick.mp3" id="11_uq3qu"]
+[ext_resource type="AudioStream" uid="uid://2u35b4y83xfx" path="res://Assets/Audio/buttonhover.mp3" id="12_0p6qk"]
 
 [node name="GameOver" type="Control" unique_id=285489906]
 layout_mode = 3
@@ -101,7 +104,18 @@ stretch_mode = 0
 [node name="CursorOnLoad" type="Node" parent="." unique_id=426917033]
 script = ExtResource("6_v3hpu")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1210872591]
+[node name="SoundManager" type="Node" parent="." unique_id=248747146]
+script = ExtResource("9_o57t2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager" unique_id=1210872591]
 stream = ExtResource("5_7m3ot")
 volume_db = -30.0
 autoplay = true
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1842484045]
+stream = ExtResource("11_uq3qu")
+bus = &"SFX"
+
+[node name="ButtonHoverSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1580956905]
+stream = ExtResource("12_0p6qk")
+bus = &"SFX"
