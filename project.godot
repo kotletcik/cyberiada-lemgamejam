@@ -15,9 +15,17 @@ run/main_scene="uid://b358ixnt1q87h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c60p506133tnp"
+
 [autoload]
 
 EventBus="*uid://c37on10ytmk1x"
+
+[debug_draw_3d]
+
+settings/addon_root_folder="res://Assets/debug_draw_3d"
 
 [input]
 
