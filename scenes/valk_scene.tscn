@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="1_nkfjo"]
 [ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="2_ls6vv"]
+[ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="3_uf0cl"]
+[ext_resource type="Script" uid="uid://8hdpjb43xh8r" path="res://Scripts/Valk/game_manager.gd" id="4_kra62"]
 
 [node name="ValkScene" type="Node2D" unique_id=401155208]
 
@@ -20,3 +22,12 @@ mistake_timer = 2.0
 metadata/_custom_type_script = "uid://bud8t0ommmhrf"
 
 [node name="SafeZone" type="Node2D" parent="." unique_id=790665712]
+
+[node name="TaskManager" type="Node" parent="." unique_id=1510249987]
+script = ExtResource("3_uf0cl")
+
+[node name="GameManager" type="Node" parent="." unique_id=552892914 node_paths=PackedStringArray("camera")]
+script = ExtResource("4_kra62")
+camera_positions = Array[Vector2]([Vector2(0, 0), Vector2(256, 0), Vector2(-256, 0)])
+camera = NodePath("../Camera2D")
+metadata/_custom_type_script = "uid://8hdpjb43xh8r"
