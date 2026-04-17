@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="18_adb74"]
 [ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="19_58gk3"]
 [ext_resource type="AudioStream" uid="uid://drbao06dgkox1" path="res://Assets/Audio/TaskDone.mp3" id="20_to7gp"]
+[ext_resource type="AudioStream" uid="uid://b2bwhh61b68fk" path="res://Assets/Audio/switchlightoff.mp3" id="21_adb74"]
+[ext_resource type="AudioStream" uid="uid://vva4hsvjtyhl" path="res://Assets/Audio/switchlighton.mp3" id="22_58gk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdqt8"]
 
@@ -407,4 +409,12 @@ bus = &"SFX"
 
 [node name="task_done_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=507829313]
 stream = ExtResource("20_to7gp")
+bus = &"SFX"
+
+[node name="lights_off_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1528277207]
+stream = ExtResource("21_adb74")
+bus = &"SFX"
+
+[node name="lights_on_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1790868593]
+stream = ExtResource("22_58gk3")
 bus = &"SFX"
