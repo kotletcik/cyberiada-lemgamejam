@@ -21,9 +21,6 @@
 [node name="AnimatedSprite2D" parent="Level/Alien" index="1" unique_id=1979880464]
 visible = false
 
-[node name="Debug" parent="Level/Alien" index="2" unique_id=1601381241]
-visible = false
-
 [node name="Sprite2D" type="Sprite2D" parent="Level/Alien" unique_id=885923834]
 material = SubResource("ShaderMaterial_lhrft")
 scale = Vector2(0.1, 0.1)
@@ -64,12 +61,10 @@ aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../
 
 [node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
 script = ExtResource("3_2o60n")
-path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(8, 12), Vector2(4, 12), Vector2(0, 12)])
 dance_name = "Run"
 
 [node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=2020204009]
 script = ExtResource("3_2o60n")
-path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(4, 8), Vector2(0, 8), Vector2(0, 4)])
 dance_name = "Idle"
 is_static = true
 
