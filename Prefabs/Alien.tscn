@@ -91,6 +91,10 @@ animations = [{
 }]
 
 [node name="Alien" type="CharacterBody2D" unique_id=1972185887 node_paths=PackedStringArray("debug_sprite")]
+scale = Vector2(0.1, 0.1)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_mwacy")
 debug_sprite = NodePath("Debug")
 

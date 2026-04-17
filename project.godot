@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://c37on10ytmk1x"
 
+[debug_draw_3d]
+
+settings/addon_root_folder="res://Assets/debug_draw_3d"
+
 [input]
 
 "Move Forward"={
