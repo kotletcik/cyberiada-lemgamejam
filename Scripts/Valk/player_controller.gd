@@ -6,11 +6,20 @@ class_name PlayerController
 var movement_locked: bool = false;
 
 func _ready() -> void:
-	EventBus.light_is_switched.connect(change_movement_lock);
-	EventBus.day_static_dance_started.connect(change_movement_lock.bind(true));
+	EventBus.light_is_switched.connect(enable_movement_on_night);
+	EventBus.day_static_dance_started.connect(disable_movement);
 
 func change_movement_lock(value: bool):
 	movement_locked = value;
+
+func disable_movement():
+	movement_locked = true;
+	print("movement disabled")
+	
+func enable_movement_on_night(is_day: bool):
+	if (!is_day):
+		movement_locked = false;
+		print("movement enabled")
 
 func _process(delta: float) -> void:
 	if(!movement_locked):
