@@ -23,10 +23,11 @@ func _ready():
 func give_action_to_aliens():
 	for alien in aliens:
 		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
-		var alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(is_static)) % current_aliens_path.size()
+		var alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static)) % current_aliens_path.size()
 		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index], current_dance_name)
 		alien.is_static = is_static
-		if (alien_target_pos_index == current_aliens_path.size() - 1):
+		#if (alien_target_pos_index == current_aliens_path.size() - 1):
+		if (alien_target_pos_index == 0):
 			alien.do_current_action_with_teleport()
 		else: 
 			alien.do_current_action()
