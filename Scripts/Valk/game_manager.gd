@@ -26,4 +26,3 @@ func switch_level(level: int):
 	MistakeManager.instance.reset_mistakes_left();
 	# TaskManager.instance.generate_next_tasks();
 	current_level = level;
-
