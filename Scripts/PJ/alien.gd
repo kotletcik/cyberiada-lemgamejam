@@ -13,15 +13,29 @@ func _physics_process(delta: float) -> void:
 	_delta = delta
 	move_and_slide()
 
+func do_current_action_with_teleport():
+	var direction: Vector2 = (current_alien_action.movement_target_pos - global_position).normalized()
+	var distance = (global_position - current_alien_action.movement_target_pos).length()
+	var steptime = Cycle_manager.instance.phase_step_duration
+	debug_sprite.global_position = current_alien_action.movement_target_pos
+	#print ("current pos: ", global_position)
+	#print ("target pos: ", current_alien_action.movement_target_pos)
+	#velocity = direction * (distance/steptime) * is_static;
+	global_position = current_alien_action.movement_target_pos
+	#global_position += direction * (_delta * distance/steptime * 100)
+	#print ("delta move: ",(distance))
+	if (animated_sprite != null):
+		animated_sprite.play(current_alien_action.sprite_name)
+
+
 func do_current_action():
 	var direction: Vector2 = (current_alien_action.movement_target_pos - global_position).normalized()
 	var distance = (global_position - current_alien_action.movement_target_pos).length()
 	var  steptime = Cycle_manager.instance.phase_step_duration
 	debug_sprite.global_position = current_alien_action.movement_target_pos
-	velocity = Vector2.ZERO
 	#print ("current pos: ", global_position)
 	#print ("target pos: ", current_alien_action.movement_target_pos)
-	velocity = direction * (distance/steptime) * is_static;
+	velocity = direction * (distance/steptime) * int(!is_static);
 	#global_position += direction * (_delta * distance/steptime * 100)
 	#print ("delta move: ",(distance))
 	if (animated_sprite != null):
