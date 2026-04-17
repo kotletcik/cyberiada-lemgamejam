@@ -3,22 +3,27 @@ class_name Aliens_actions_manager
 
 @export var dances: Array[Alien_dance]
 
-var aliens: Array[Alien]
+@export var aliens: Array[Alien]
 var current_aliens_path: Array[Vector2]
 var current_dance_name: String
 static var instance: Aliens_actions_manager
 
-func _onready():
+func _ready():
 	if (instance != null):
 		print ("more than one aliens actions manager exists")
 		instance.queue_free()
-		instance = self
+	instance = self
 	EventBus.step_is_past.connect(give_action_to_aliens)
+	EventBus.light_is_switched.connect(change_dance_randomly)
+	change_dance_randomly()
 	
 func give_action_to_aliens():
 	for alien in aliens:
-		var alien_target_pos = alien.id * current_aliens_path.size() / aliens.size() + alien.id * Cycle_manager.instance.current_time_step 
-		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos], current_dance_name)
+		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
+		var alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.current_time_step) % current_aliens_path.size()
+		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index], current_dance_name)
+		
+		print ("alien target pos index", alien_target_pos_index)
 		alien.do_current_action()
 
 func change_dance_randomly():
