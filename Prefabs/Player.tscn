@@ -9,6 +9,7 @@
 [node name="Player" type="CharacterBody2D" unique_id=1444099841]
 script = ExtResource("1_um8lo")
 speed = 10.0
+interaction_range = 10.0
 metadata/_custom_type_script = "uid://dvotb7rsxllt7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]

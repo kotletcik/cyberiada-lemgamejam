@@ -17,10 +17,13 @@ enum tasks {
 static var instance: TaskManager;
 
 @export var generated_tasks: Array[tasks] = [tasks.None];
-
+@export var scene_tasks: Array[SceneTask] = [null];
 var first_free_index: int;
 
 var completed_tasks_count: int = 0;
+
+func turn_on_current_task():
+	scene_tasks[completed_tasks_count].visible = true;
 
 func get_next_task() -> tasks:
 	return generated_tasks[completed_tasks_count];
@@ -31,6 +34,9 @@ func _ready() -> void:
 		generated_tasks.resize(9);
 		for i in range(0, generated_tasks.size()):
 			generated_tasks[i] = tasks.None;
+		for i in range(0, scene_tasks.size()):
+			scene_tasks[i].visible = false;
+		scene_tasks[0].visible = true;
 		first_free_index = 0;
 		generate_next_tasks();
 
@@ -57,5 +63,12 @@ func generate_next_tasks():
 		first_free_index += 1;
 
 func complete_task():
+	scene_tasks[completed_tasks_count].visible = false;
 	completed_tasks_count += 1;
+	if(completed_tasks_count % 3 == 0 && completed_tasks_count < 3):
+		generate_next_tasks()
+	if(completed_tasks_count == scene_tasks.size()):
+		GameManager.instance.game_completed();
+		return;
+	scene_tasks[completed_tasks_count].visible = true;
 		

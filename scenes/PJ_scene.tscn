@@ -10,8 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="9_egjn3"]
 [ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="9_t37iy"]
 [ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="10_5pncu"]
+[ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="11_egjn3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5pncu"]
+load_path = "res://.godot/imported/redsquare.jpg-eee76869009dfec8707527bb3413fa4c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_egjn3"]
+load_path = "res://.godot/imported/background.png-0fe7fdccbfb840633f2979355b3a644c.ctex"
 
 [node name="Map2" type="Node2D" unique_id=261449112]
 
@@ -271,6 +278,12 @@ texture = ExtResource("6_gpest")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
 zoom = Vector2(1.28, 1.28)
 
+[node name="red_shader" type="Sprite2D" parent="Camera2D" unique_id=1197225648]
+visible = false
+modulate = Color(1, 1, 1, 0.4117647)
+scale = Vector2(1.695, 1.695)
+texture = SubResource("CompressedTexture2D_5pncu")
+
 [node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
 z_index = 1
 position = Vector2(-140.00003, 0)
@@ -279,6 +292,7 @@ texture = ExtResource("7_6merk")
 
 [node name="TaskManager" type="Node" parent="." unique_id=1750545070]
 script = ExtResource("9_t37iy")
+generated_tasks = Array[int]([1])
 
 [node name="Player" parent="." unique_id=1444099841 instance=ExtResource("9_egjn3")]
 z_index = 2
@@ -294,3 +308,33 @@ safe_zone_distance = 10.03
 mistake_timer = 2.0
 push_back_timer = 0.5
 metadata/_custom_type_script = "uid://bud8t0ommmhrf"
+
+[node name="DanceManager" type="Node2D" parent="." unique_id=2020528592 node_paths=PackedStringArray("label", "mistake_shader")]
+script = ExtResource("11_egjn3")
+label = NodePath("Dance/background_menu/Label")
+mistake_shader = NodePath("../Camera2D/red_shader")
+
+[node name="Dance" type="Control" parent="DanceManager" unique_id=62719863]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background_menu" type="TextureRect" parent="DanceManager/Dance" unique_id=702080748]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -400.0
+offset_top = 100.0
+offset_right = -300.0001
+offset_bottom = 200.0
+texture = SubResource("CompressedTexture2D_egjn3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="DanceManager/Dance/background_menu" unique_id=396974032]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 15.0
+offset_right = 75.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 51
+text = "W"
