@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://dwggcon2xxq12"]
+
+[ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="1_do8gv"]
+[ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="2_rxew5"]
+[ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="3_q6ts7"]
+[ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="4_mdviv"]
+[ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="5_svex1"]
+[ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="6_4ov1q"]
+[ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="7_ubpxq"]
+[ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="8_h2ulf"]
+[ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="9_tvpyj"]
+[ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="10_5m78v"]
+[ext_resource type="Script" uid="uid://bppxn656e3455" path="res://Scripts/Sanuuu/audio_manager.gd" id="11_q6ts7"]
+[ext_resource type="AudioStream" uid="uid://bl5sbpy1nq05n" path="res://Assets/Audio/PsychoMoves.mp3" id="12_mdviv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
+
+[node name="Map2" type="Node2D" unique_id=261449112]
+
+[node name="Level" type="Node2D" parent="." unique_id=766609530]
+
+[node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_do8gv")]
+
+[node name="safezone" type="CharacterBody2D" parent="Level" unique_id=1969406390]
+position = Vector2(4, 0)
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("2_rxew5")
+id = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/safezone" unique_id=1724243456]
+shape = SubResource("CapsuleShape2D_ewn6o")
+
+[node name="Debug" type="Sprite2D" parent="Level/safezone" unique_id=1601381241]
+z_index = 1
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("3_q6ts7")
+
+[node name="Alien3" parent="Level" unique_id=1952440405 instance=ExtResource("1_do8gv")]
+position = Vector2(8, 0)
+id = 2
+
+[node name="Alien4" parent="Level" unique_id=2016627882 instance=ExtResource("1_do8gv")]
+position = Vector2(8, 4)
+id = 3
+
+[node name="Alien5" parent="Level" unique_id=1528270353 instance=ExtResource("1_do8gv")]
+position = Vector2(8, 8)
+id = 4
+
+[node name="Alien6" parent="Level" unique_id=1905355714 instance=ExtResource("1_do8gv")]
+position = Vector2(4, 8)
+id = 1
+
+[node name="Alien7" parent="Level" unique_id=408258112 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 8)
+id = 6
+
+[node name="Alien8" parent="Level" unique_id=573647361 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 7
+
+[node name="Alien9" parent="Level" unique_id=1382443671 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 8
+
+[node name="Alien10" parent="Level" unique_id=353839343 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 9
+
+[node name="Alien11" parent="Level" unique_id=243056315 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 10
+
+[node name="Alien12" parent="Level" unique_id=747787726 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 11
+
+[node name="Alien13" parent="Level" unique_id=1258111765 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 12
+
+[node name="Alien14" parent="Level" unique_id=1989820472 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 13
+
+[node name="Alien15" parent="Level" unique_id=1692817261 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 14
+
+[node name="Alien16" parent="Level" unique_id=2005852718 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 15
+
+[node name="Alien17" parent="Level" unique_id=2101143544 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 16
+
+[node name="Alien18" parent="Level" unique_id=2097104315 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 17
+
+[node name="Alien19" parent="Level" unique_id=1200881419 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 18
+
+[node name="Alien20" parent="Level" unique_id=1478659191 instance=ExtResource("1_do8gv")]
+position = Vector2(0, 4)
+id = 19
+
+[node name="enter" type="Node2D" parent="." unique_id=1075077146]
+position = Vector2(-256.99997, -72.99999)
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="enter" unique_id=1231147012]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("3_q6ts7")
+
+[node name="exit" type="Node2D" parent="." unique_id=1605304078]
+position = Vector2(295.99997, 153)
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="exit" unique_id=1744189795]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("3_q6ts7")
+
+[node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
+script = ExtResource("4_mdviv")
+dances = [NodePath("Dance1"), NodePath("Dance2")]
+aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/safezone"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8"), NodePath("../Level/Alien9"), NodePath("../Level/Alien10"), NodePath("../Level/Alien11"), NodePath("../Level/Alien12"), NodePath("../Level/Alien13"), NodePath("../Level/Alien14"), NodePath("../Level/Alien15"), NodePath("../Level/Alien16"), NodePath("../Level/Alien17"), NodePath("../Level/Alien18"), NodePath("../Level/Alien19"), NodePath("../Level/Alien20")]
+
+[node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264 node_paths=PackedStringArray("path")]
+script = ExtResource("5_svex1")
+path = [NodePath("path point"), NodePath("path point2"), NodePath("path point3"), NodePath("path point4"), NodePath("path point5"), NodePath("path point6"), NodePath("path point7"), NodePath("path point8"), NodePath("path point9"), NodePath("path point10"), NodePath("path point11"), NodePath("path point12"), NodePath("path point13"), NodePath("path point14"), NodePath("path point15"), NodePath("path point16"), NodePath("path point17"), NodePath("path point18"), NodePath("path point19"), NodePath("path point20")]
+dance_name = "Run"
+
+[node name="path point" type="Node2D" parent="Alien actions manager/Dance1" unique_id=580209907]
+position = Vector2(-256, -75)
+
+[node name="path point2" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1907993047]
+position = Vector2(-189, -73)
+
+[node name="path point3" type="Node2D" parent="Alien actions manager/Dance1" unique_id=419637448]
+position = Vector2(-125, -73)
+
+[node name="path point4" type="Node2D" parent="Alien actions manager/Dance1" unique_id=8056786]
+position = Vector2(-61, -73)
+
+[node name="path point5" type="Node2D" parent="Alien actions manager/Dance1" unique_id=560502159]
+position = Vector2(2, -78)
+
+[node name="path point6" type="Node2D" parent="Alien actions manager/Dance1" unique_id=233512486]
+position = Vector2(65, -80)
+
+[node name="path point7" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1290739851]
+position = Vector2(98, -28)
+
+[node name="path point8" type="Node2D" parent="Alien actions manager/Dance1" unique_id=2026043483]
+position = Vector2(53, 28)
+
+[node name="path point9" type="Node2D" parent="Alien actions manager/Dance1" unique_id=66720688]
+position = Vector2(-22, 30)
+
+[node name="path point10" type="Node2D" parent="Alien actions manager/Dance1" unique_id=582818561]
+position = Vector2(-92, 27)
+
+[node name="path point11" type="Node2D" parent="Alien actions manager/Dance1" unique_id=896751216]
+position = Vector2(-162, 28)
+
+[node name="path point12" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1250274202]
+position = Vector2(-198, 81)
+
+[node name="path point13" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1691922896]
+position = Vector2(-156, 131)
+
+[node name="path point14" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1841288893]
+position = Vector2(-94, 143)
+
+[node name="path point15" type="Node2D" parent="Alien actions manager/Dance1" unique_id=817289174]
+position = Vector2(-25, 143)
+
+[node name="path point16" type="Node2D" parent="Alien actions manager/Dance1" unique_id=168064976]
+position = Vector2(44, 142)
+
+[node name="path point17" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1389541388]
+position = Vector2(106, 140)
+
+[node name="path point18" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1350844552]
+position = Vector2(167, 137)
+
+[node name="path point19" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1232279731]
+position = Vector2(232, 142)
+
+[node name="path point20" type="Node2D" parent="Alien actions manager/Dance1" unique_id=1225925034]
+position = Vector2(296, 154)
+
+[node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=127885326 node_paths=PackedStringArray("path")]
+script = ExtResource("5_svex1")
+path = [NodePath("path point"), NodePath("path point2"), NodePath("path point3"), NodePath("path point4"), NodePath("path point5"), NodePath("path point6"), NodePath("path point7"), NodePath("path point8"), NodePath("path point9"), NodePath("path point10"), NodePath("path point11"), NodePath("path point12"), NodePath("path point13"), NodePath("path point14"), NodePath("path point15"), NodePath("path point16"), NodePath("path point17"), NodePath("path point18"), NodePath("path point19"), NodePath("path point20")]
+dance_name = "Idle"
+is_static = true
+
+[node name="path point" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1415425370]
+position = Vector2(-256, -75)
+
+[node name="path point2" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1352506430]
+position = Vector2(-189, -73)
+
+[node name="path point3" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1321581697]
+position = Vector2(-125, -73)
+
+[node name="path point4" type="Node2D" parent="Alien actions manager/Dance2" unique_id=400749517]
+position = Vector2(-61, -73)
+
+[node name="path point5" type="Node2D" parent="Alien actions manager/Dance2" unique_id=2020556164]
+position = Vector2(2, -78)
+
+[node name="path point6" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1417873788]
+position = Vector2(65, -80)
+
+[node name="path point7" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1502225595]
+position = Vector2(98, -28)
+
+[node name="path point8" type="Node2D" parent="Alien actions manager/Dance2" unique_id=43694689]
+position = Vector2(53, 28)
+
+[node name="path point9" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1966930279]
+position = Vector2(-22, 30)
+
+[node name="path point10" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1550806980]
+position = Vector2(-92, 27)
+
+[node name="path point11" type="Node2D" parent="Alien actions manager/Dance2" unique_id=483918939]
+position = Vector2(-162, 28)
+
+[node name="path point12" type="Node2D" parent="Alien actions manager/Dance2" unique_id=489167543]
+position = Vector2(-198, 81)
+
+[node name="path point13" type="Node2D" parent="Alien actions manager/Dance2" unique_id=120103690]
+position = Vector2(-156, 131)
+
+[node name="path point14" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1100078676]
+position = Vector2(-94, 143)
+
+[node name="path point15" type="Node2D" parent="Alien actions manager/Dance2" unique_id=894472806]
+position = Vector2(-25, 143)
+
+[node name="path point16" type="Node2D" parent="Alien actions manager/Dance2" unique_id=412915092]
+position = Vector2(44, 142)
+
+[node name="path point17" type="Node2D" parent="Alien actions manager/Dance2" unique_id=763290743]
+position = Vector2(106, 140)
+
+[node name="path point18" type="Node2D" parent="Alien actions manager/Dance2" unique_id=212409702]
+position = Vector2(167, 137)
+
+[node name="path point19" type="Node2D" parent="Alien actions manager/Dance2" unique_id=1866215577]
+position = Vector2(232, 142)
+
+[node name="path point20" type="Node2D" parent="Alien actions manager/Dance2" unique_id=991352593]
+position = Vector2(296, 154)
+
+[node name="Cycle manager" type="Node2D" parent="." unique_id=1090998778]
+script = ExtResource("6_4ov1q")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1420116724]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_ubpxq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
+zoom = Vector2(1.28, 1.28)
+
+[node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
+z_index = 1
+position = Vector2(-140.00003, 0)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("3_q6ts7")
+
+[node name="TaskManager" type="Node" parent="." unique_id=1750545070]
+script = ExtResource("8_h2ulf")
+
+[node name="Player" parent="." unique_id=1444099841 instance=ExtResource("9_tvpyj")]
+z_index = 2
+position = Vector2(-60.999996, 1.9999999)
+scale = Vector2(0.1, 0.1)
+speed = 100.0
+
+[node name="MistakeManager" type="Node" parent="." unique_id=251915723 node_paths=PackedStringArray("player", "safe_zone")]
+script = ExtResource("10_5m78v")
+player = NodePath("../Player")
+safe_zone = NodePath("../Level/safezone")
+safe_zone_distance = 10.03
+mistake_timer = 2.0
+push_back_timer = 0.5
+metadata/_custom_type_script = "uid://bud8t0ommmhrf"
+
+[node name="SoundManager" type="Node" parent="." unique_id=352708325 node_paths=PackedStringArray("bg_music_player")]
+script = ExtResource("11_q6ts7")
+bg_music_player = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager" unique_id=1479181383]
+stream = ExtResource("12_mdviv")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+script = ExtResource("11_q6ts7")

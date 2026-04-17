@@ -12,9 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="9_6u1mn"]
 [ext_resource type="Script" uid="uid://8hdpjb43xh8r" path="res://Scripts/Valk/game_manager.gd" id="9_r6p65"]
 [ext_resource type="Texture2D" uid="uid://bh33nx8hedl1s" path="res://Assets/Tasks/zupaobiad1.png" id="11_bcnxi"]
-[ext_resource type="Script" uid="uid://c15vj66rsrqyo" path="res://Scripts/Valk/scene_task.gd" id="12_7nt27"]
+[ext_resource type="Script" path="res://Scripts/Valk/scene_task.gd" id="12_7nt27"]
 [ext_resource type="Texture2D" uid="uid://0ggjf8hed6ut" path="res://Assets/Tasks/zupaobiad.png" id="13_k6f3i"]
 [ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="15_si52b"]
+[ext_resource type="Script" uid="uid://bppxn656e3455" path="res://Scripts/Sanuuu/audio_manager.gd" id="16_k6f3i"]
+[ext_resource type="AudioStream" uid="uid://bl5sbpy1nq05n" path="res://Assets/Audio/PsychoMoves.mp3" id="17_xdqt8"]
+[ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="18_adb74"]
+[ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="19_58gk3"]
+[ext_resource type="AudioStream" uid="uid://drbao06dgkox1" path="res://Assets/Audio/TaskDone.mp3" id="20_to7gp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdqt8"]
 
@@ -380,3 +385,26 @@ offset_right = 75.0
 offset_bottom = 85.0
 theme_override_font_sizes/font_size = 51
 text = "W"
+
+[node name="SoundManager" type="Node" parent="." unique_id=1490811696 node_paths=PackedStringArray("bg_music_player")]
+script = ExtResource("16_k6f3i")
+bg_music_player = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager" unique_id=1124951446]
+stream = ExtResource("17_xdqt8")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+script = ExtResource("16_k6f3i")
+
+[node name="you_win_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1506362342]
+stream = ExtResource("18_adb74")
+bus = &"SFX"
+
+[node name="you_lose_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1062342073]
+stream = ExtResource("19_58gk3")
+bus = &"SFX"
+
+[node name="task_done_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=507829313]
+stream = ExtResource("20_to7gp")
+bus = &"SFX"
