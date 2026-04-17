@@ -45,9 +45,9 @@ func _process(delta: float) -> void:
 
 func register_mistake():
 	mistakes_left -= 1;
-	print(mistakes_left);
-	#if(mistakes_left < 1):
-		#get_tree().reload_current_scene();
+	# print(mistakes_left);
+	if(mistakes_left < 1):
+		GameManager.instance.game_over();
 
 func reset_mistakes_left():
 	mistakes_left = 3;
