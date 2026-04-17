@@ -259,15 +259,13 @@ E - interakcja z przedmiotami"
 [node name="Label2" type="Label" parent="Controls2" unique_id=1455004134]
 layout_mode = 0
 offset_left = 324.0
-offset_top = 112.0
+offset_top = 78.0
 offset_right = 945.0
-offset_bottom = 408.0
+offset_bottom = 443.0
 theme_override_font_sizes/font_size = 14
-text = "Jesteśmy ziomkiem w fabryce kosmitów. Próbujemy uratować ostatniego człowieka w pobliżu - jedynego oprócz nas, który przetrwał eksterminację ludzkiego gatunku. Kosmici generują energię fabryki tańcząc. Dodatkowo zajmują się podstawowym podtrzymywaniem porządku w fabryce. Pan Pałolud pilnuje, czy kosmici ładnie tańczą i robią zadania. Wie, że gdzieś wkradł się przebrzydły człowiek, ale nie jest w stanie go wykryć, gdyż przebiegła istota przebrała się w jednego z kosmitów!
+text = "Na tajemniczej planecie, niezidentyfikowane psychiczne stworzenia, nadzorowane pod czujnym okiem Pana Pałoluda, muszą tańczyć, aby generować energię w kosmicznej elektrowni. Wciel się w ostatniego człowieka w pobliżu, który przebrany za jednego z kosmitów próbuje infiltrować kosmiczną twierdzę energetyczną i ocalić przechowywany gen swojego gatunku. Utrzymuj miejsce w psychopociągu, tańcz jak oni, wykonując rytmicznie odpowiednie ruchy, zbieraj części kodu i wydostań się z potrzasku sprytnie wykorzystując przerwy w przepustowości prądu, gdy Pan Pałolud nie widzi Twoich działań. W tej rytmicznej grze akcji, każdy Twój krok ma znaczenie!
 
-Nasz towarzysz, mimo zamknięcia, jest w stanie manipulować prądem w fabryce. Co jakiś czas jest w stanie wyłączać prąd co gasi światła w pomieszczeniu powodując, że Pan Pałolud nie jest w stanie monitorować co się dzieje w fabryce.
-
-Wykonuj taski aby odblokowywać części tajnego kosmicznego kodu, który musisz podać na końcu kolejki, aby uciec"
+Wykonuj wszelkie działania za pomocą przycisków [W], [S], [A] oraz [D]. Utrzymuj swoje miejsce w kosmicznym pociągu. Kopiuj ruchy taneczne alienów w tempie muzyki. Gdy tylko zgaśnie światło, możesz swobodnie poruszać się po mapie, aby szukać wskazówek do tajemniczego kodu, które możesz podnieść klawiszem [E], ale uważaj - Twój czas jest ograniczony, zanim zostanie przywrócone zasilanie! Zbierz wszystkie wskazówki zanim Twoje miejsce w kolejce sięgnie wyjścia z pomieszczenia - inaczej nie zaliczysz anty-Captcha i zostaniesz zidentyfikowany jako człowiek!"
 autowrap_mode = 3
 
 [node name="SoundManager" type="Node" parent="." unique_id=460425975]
