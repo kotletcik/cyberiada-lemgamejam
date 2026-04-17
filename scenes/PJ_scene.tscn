@@ -19,13 +19,12 @@
 
 [node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_rm2fy")]
 
-[node name="safezone" type="CharacterBody2D" parent="Level" unique_id=1969406390 node_paths=PackedStringArray("debug_sprite")]
+[node name="safezone" type="CharacterBody2D" parent="Level" unique_id=1969406390]
 position = Vector2(4, 0)
 collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("2_egjn3")
-debug_sprite = NodePath("Debug")
 id = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/safezone" unique_id=1724243456]
