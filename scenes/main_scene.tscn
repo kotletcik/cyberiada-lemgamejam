@@ -27,6 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://b2bwhh61b68fk" path="res://Assets/Audio/switchlightoff.mp3" id="21_adb74"]
 [ext_resource type="AudioStream" uid="uid://vva4hsvjtyhl" path="res://Assets/Audio/switchlighton.mp3" id="22_58gk3"]
 [ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="26_6p3nn"]
+[ext_resource type="Texture2D" uid="uid://cnghnv6y3puj5" path="res://Assets/Sprites/stick_down.png" id="28_4bgka"]
+[ext_resource type="Texture2D" uid="uid://dd1oyahjibkep" path="res://Assets/Sprites/stick_up.png" id="29_02d50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdqt8"]
 size = Vector2(4.5999975, 3.6000013)
@@ -41,6 +43,20 @@ load_path = "res://.godot/imported/background.png-0fe7fdccbfb840633f2979355b3a64
 
 [sub_resource type="LabelSettings" id="LabelSettings_adb74"]
 font_size = 64
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgk25"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": ExtResource("28_4bgka")
+}, {
+"duration": 4.0,
+"texture": ExtResource("29_02d50")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=261449112]
 
@@ -558,19 +574,27 @@ offset_right = 75.0
 offset_bottom = 85.0
 theme_override_font_sizes/font_size = 51
 text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tutorial" type="Label" parent="DanceManager/Dance" unique_id=1138157796]
 layout_mode = 0
-offset_left = -382.0
-offset_top = -238.0
-offset_right = 362.0
-offset_bottom = -150.0
-text = "IDŹ NA SWOJE MIEJSCE!!!"
+offset_left = 0.99998474
+offset_top = -248.00002
+offset_right = 769.0
+offset_bottom = -160.00002
+scale = Vector2(0.51, 0.51)
+theme_override_font_sizes/font_size = 9
+text = "Wracaj na swoje miejsce!"
 label_settings = SubResource("LabelSettings_adb74")
+autowrap_mode = 3
 
-[node name="DisappearAfterTime" type="Node" parent="DanceManager/Dance/Tutorial" unique_id=807193490]
+[node name="DisappearAfterTime" type="Node" parent="DanceManager/Dance/Tutorial" unique_id=807193490 node_paths=PackedStringArray("label")]
 script = ExtResource("18_58gk3")
-timer = 5.0
+label = NodePath("..")
+timer = 30.0
+time_intervals = Array[float]([24.0, 16.0, -18.795])
+notes = Array[String](["Klikaj w rytm aby tańczyć!", "Zbieraj przedmioty póki ciemno!"])
 
 [node name="SoundManager" type="Node" parent="." unique_id=1490811696 node_paths=PackedStringArray("bg_music_player")]
 script = ExtResource("16_k6f3i")
@@ -602,5 +626,15 @@ bus = &"SFX"
 [node name="CursorOnLoad" type="Node" parent="." unique_id=1455969572]
 script = ExtResource("26_6p3nn")
 cursor_locked = true
+
+[node name="Pała" type="Node2D" parent="." unique_id=166582098]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pała" unique_id=1744176564]
+z_index = 7
+position = Vector2(347.99997, -172)
+scale = Vector2(0.065, 0.065)
+sprite_frames = SubResource("SpriteFrames_pgk25")
+autoplay = "default"
+frame_progress = 0.11169213
 
 [connection signal="body_entered" from="Ending Trigger" to="Ending Trigger" method="_on_body_entered"]

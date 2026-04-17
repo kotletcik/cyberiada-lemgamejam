@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cnebpot0w1yov" path="res://Assets/UI/x.png" id="11_flqon"]
 [ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 [ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="12_flqon"]
-[ext_resource type="Script" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
+[ext_resource type="Script" uid="uid://clathypbpklmf" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
 [ext_resource type="AudioStream" uid="uid://djn2mgqpm7jg0" path="res://Assets/Audio/PsychoMenu.mp3" id="13_1ajci"]
+[ext_resource type="AudioStream" uid="uid://b0fnmdpfao8vh" path="res://Assets/Audio/buttonclick.mp3" id="14_5pajh"]
+[ext_resource type="AudioStream" uid="uid://2u35b4y83xfx" path="res://Assets/Audio/buttonhover.mp3" id="15_j7ex8"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
@@ -223,7 +225,6 @@ min_value = -20.0
 max_value = 5.0
 
 [node name="Controls2" type="Control" parent="." unique_id=1114963884]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -245,6 +246,30 @@ texture_normal = ExtResource("11_flqon")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Label" type="Label" parent="Controls2" unique_id=209046383]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 446.0
+offset_right = 950.0
+offset_bottom = 567.0
+theme_override_font_sizes/font_size = 43
+text = "WASD - poruszanie się i taniec
+E - interakcja z przedmiotami"
+
+[node name="Label2" type="Label" parent="Controls2" unique_id=1455004134]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 112.0
+offset_right = 945.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 14
+text = "Jesteśmy ziomkiem w fabryce kosmitów. Próbujemy uratować ostatniego człowieka w pobliżu - jedynego oprócz nas, który przetrwał eksterminację ludzkiego gatunku. Kosmici generują energię fabryki tańcząc. Dodatkowo zajmują się podstawowym podtrzymywaniem porządku w fabryce. Pan Pałolud pilnuje, czy kosmici ładnie tańczą i robią zadania. Wie, że gdzieś wkradł się przebrzydły człowiek, ale nie jest w stanie go wykryć, gdyż przebiegła istota przebrała się w jednego z kosmitów!
+
+Nasz towarzysz, mimo zamknięcia, jest w stanie manipulować prądem w fabryce. Co jakiś czas jest w stanie wyłączać prąd co gasi światła w pomieszczeniu powodując, że Pan Pałolud nie jest w stanie monitorować co się dzieje w fabryce.
+
+Wykonuj taski aby odblokowywać części tajnego kosmicznego kodu, który musisz podać na końcu kolejki, aby uciec"
+autowrap_mode = 3
+
 [node name="SoundManager" type="Node" parent="." unique_id=460425975]
 script = ExtResource("12_rcqid")
 
@@ -254,5 +279,33 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1895308589]
+stream = ExtResource("14_5pajh")
+bus = &"SFX"
+
+[node name="ButtonHoverSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1527250996]
+stream = ExtResource("15_j7ex8")
+bus = &"SFX"
+
 [node name="CursorOnLoad" type="Node" parent="." unique_id=906491640]
 script = ExtResource("12_flqon")
+
+[node name="Label" type="Label" parent="." unique_id=277392936]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 60.0
+offset_right = 1126.0
+offset_bottom = 160.0
+text = "Made by Catalyst team
+ on Lem GameJam 2026 in 24 hours"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1484510213]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 493.0
+offset_right = 886.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 40
+text = "Fabuła"
+autowrap_mode = 3
