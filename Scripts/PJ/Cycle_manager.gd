@@ -33,4 +33,7 @@ func _physics_process(delta: float) -> void:
 
 func switch_light():
 	is_day = !is_day
+	if (is_day && Aliens_actions_manager.instance.current_dance.is_static):
+		EventBus.day_static_dance_started.emit()
+		
 	print ("light switched")
