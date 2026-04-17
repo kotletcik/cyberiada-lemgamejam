@@ -3,8 +3,17 @@ class_name PlayerController
 
 @export var speed: float;
 
+var movement_locked: bool = false;
+
+func _ready() -> void:
+	EventBus.light_is_switched.connect(change_movement_lock);
+	EventBus.day_static_dance_started.connect(change_movement_lock.bind(true));
+
+func change_movement_lock(value: bool):
+	movement_locked = value;
+
 func _process(delta: float) -> void:
-	if(Cycle_manager.instance.is_day):
+	if(!movement_locked):
 		var direction: Vector2;
 		direction.x = Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left");
 		direction.y = Input.get_action_strength("Move Backward") - Input.get_action_strength("Move Forward"); 

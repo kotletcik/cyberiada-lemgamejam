@@ -20,6 +20,11 @@ static var instance: TaskManager;
 
 var first_free_index: int;
 
+var completed_tasks_count: int = 0;
+
+func get_next_task() -> tasks:
+	return generated_tasks[completed_tasks_count];
+
 func _ready() -> void:
 	if(instance == null):
 		instance = self;   
@@ -50,4 +55,7 @@ func generate_next_tasks():
 	for i in range(start_index, end_index):
 		generated_tasks[first_free_index] = get_new_task();
 		first_free_index += 1;
+
+func complete_task():
+	completed_tasks_count += 1;
 		
