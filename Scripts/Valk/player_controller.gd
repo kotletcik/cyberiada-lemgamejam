@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 			validate_dance(3);
 
 func validate_dance(dance: int):
+	#chwilowo random
 	var rng = RandomNumberGenerator.new()
 	var rand: int = rng.randi_range(0, 3);
 
