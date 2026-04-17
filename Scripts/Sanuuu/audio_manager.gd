@@ -42,4 +42,9 @@ func play_sound_you_win():
 
 func play_sound_you_lose():
 	$you_lose_sfx.play()
-	
+
+func play_lights_off():
+	$lights_off_sfx.play()
+
+func play_lights_on():
+	$lights_on_sfx.play()
