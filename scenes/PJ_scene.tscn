@@ -1,3 +1,55 @@
 [gd_scene format=3 uid="uid://b55sog04g582i"]
 
-[node name="Node2D" type="Node2D" unique_id=261449112]
+[ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="1_rm2fy"]
+[ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_gpest"]
+[ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="3_6merk"]
+[ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lkq0u"]
+[ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="5_r3keh"]
+[ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_gpest"]
+[ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_6merk"]
+
+[node name="Map" type="Node2D" unique_id=261449112]
+
+[node name="Level" type="Node2D" parent="." unique_id=766609530]
+
+[node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_rm2fy")]
+
+[node name="Alien2" parent="Level" unique_id=228521829 instance=ExtResource("1_rm2fy")]
+id = 1
+
+[node name="Alien3" parent="Level" unique_id=875286448 instance=ExtResource("1_rm2fy")]
+id = 2
+
+[node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances")]
+script = ExtResource("2_gpest")
+dances = [NodePath("Dance1"), NodePath("Dance2")]
+
+[node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
+script = ExtResource("3_6merk")
+path = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(3, 0), Vector2(3, 1), Vector2(3, 2), Vector2(3, 3), Vector2(2, 3), Vector2(1, 3), Vector2(0, 3), Vector2(0, 2), Vector2(0, 1)])
+dance_name = "Run"
+moving_speed = 1
+
+[node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=57695387]
+script = ExtResource("3_6merk")
+path = Array[Vector2]([Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(3, 0), Vector2(0, 1), Vector2(1, 1), Vector2(2, 1), Vector2(3, 1), Vector2(0, 2), Vector2(1, 2), Vector2(2, 2), Vector2(3, 2)])
+dance_name = "Idle"
+
+[node name="Cycle manager" type="Node2D" parent="." unique_id=1090998778]
+script = ExtResource("4_lkq0u")
+
+[node name="Dance manager" type="Node2D" parent="." unique_id=1749687511]
+script = ExtResource("5_r3keh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420116724]
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("6_gpest")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
+zoom = Vector2(1.27, 1.27)
+
+[node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
+z_index = 1
+position = Vector2(-140.00003, 0)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_6merk")
