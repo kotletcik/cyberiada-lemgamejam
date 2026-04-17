@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_wqhvx"]
 [ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="2_tbwuq"]
 [ext_resource type="Texture2D" uid="uid://lx74taqgu4nk" path="res://Assets/UI/exit.png" id="4_7m3ot"]
+[ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="5_7m3ot"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_racf3"]
 font_size = 96
@@ -68,3 +69,9 @@ offset_right = 1031.0
 offset_bottom = 272.0
 text = "DANCE MACABRE!!!"
 label_settings = SubResource("LabelSettings_racf3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1834537740]
+stream = ExtResource("5_7m3ot")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=442888146]
