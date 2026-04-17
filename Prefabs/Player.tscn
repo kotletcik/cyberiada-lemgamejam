@@ -67,6 +67,7 @@ animations = [{
 script = ExtResource("1_um8lo")
 night_speed = 100.0
 day_speed = 200.0
+interaction_range = 10.0
 metadata/_custom_type_script = "uid://dvotb7rsxllt7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1437680060]
