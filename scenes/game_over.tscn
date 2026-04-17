@@ -8,10 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="5_7m3ot"]
 [ext_resource type="Texture2D" uid="uid://rk3084ha8sts" path="res://Assets/Sprites/main_menu.png" id="5_irg28"]
 [ext_resource type="Texture2D" uid="uid://buudd3wqvg0iw" path="res://Assets/Sprites/dance_macabre.png" id="5_v3hpu"]
-[ext_resource type="Script" uid="uid://bwcj86u2lahwf" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_v3hpu"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_racf3"]
-font_size = 96
+[ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_v3hpu"]
 
 [node name="GameOver" type="Control" unique_id=285489906]
 layout_mode = 3
