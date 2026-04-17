@@ -1,14 +1,7 @@
-[gd_scene format=3 uid="uid://blowggupxhk48"]
+[gd_scene format=3 uid="uid://b1u1j31dbfkli"]
 
-[ext_resource type="Script" uid="uid://blhqcpue6bdeo" path="res://Scripts/Sanuuu/audio_manager.gd" id="1_d34p0"]
-
-[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_d34p0"]
-
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_d34p0"]
-stream_count = 2
-stream_0/stream = SubResource("AudioStreamMP3_d34p0")
-stream_0/volume = 0.0
-stream_1/volume = -20.0
+[ext_resource type="Script" uid="uid://bppxn656e3455" path="res://Scripts/Sanuuu/audio_manager.gd" id="1_d34p0"]
+[ext_resource type="AudioStream" uid="uid://bl5sbpy1nq05n" path="res://Assets/Audio/PsychoMoves.mp3" id="2_kj3et"]
 
 [node name="Node2D" type="Node2D" unique_id=951381079]
 
@@ -17,5 +10,7 @@ script = ExtResource("1_d34p0")
 bg_music_player = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundManager" unique_id=1644839777]
-stream = SubResource("AudioStreamSynchronized_d34p0")
-bus = &"Music"
+stream = ExtResource("2_kj3et")
+autoplay = true
+bus = &"Music_main"
+parameters/looping = false
