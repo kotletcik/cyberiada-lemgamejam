@@ -8,10 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="5_fufq8"]
 [ext_resource type="Texture2D" uid="uid://bugjo4dujuult" path="res://Assets/Sprites/dancing_queen.png" id="5_tgsk8"]
 [ext_resource type="Texture2D" uid="uid://rk3084ha8sts" path="res://Assets/Sprites/main_menu.png" id="6_80m04"]
-[ext_resource type="Script" uid="uid://bwcj86u2lahwf" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_cfpfi"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_6bev4"]
-font_size = 64
+[ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_cfpfi"]
 
 [node name="YouWon" type="Control" unique_id=285489906]
 layout_mode = 3
@@ -56,6 +53,7 @@ offset_top = 19.0
 offset_right = 235.0
 offset_bottom = 238.0
 scale = Vector2(0.825, 0.825)
+mouse_filter = 1
 texture_normal = ExtResource("4_80m04")
 ignore_texture_size = true
 stretch_mode = 0
@@ -92,6 +90,7 @@ offset_left = -8.0
 offset_top = 20.0
 offset_right = 212.0
 offset_bottom = 180.0
+mouse_filter = 1
 texture_normal = ExtResource("6_80m04")
 ignore_texture_size = true
 stretch_mode = 0

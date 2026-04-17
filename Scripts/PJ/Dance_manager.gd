@@ -12,6 +12,7 @@ var input_window_time:= 0.8
 @export var mistake_shader: Sprite2D
 var timer:= 0.0
 var waiting_to_next_step = true
+var shader_timer :=0.0
 
 enum inputs{
 	W,
@@ -39,6 +40,9 @@ func _physics_process(delta: float) -> void:
 	
 func timer_to_zero():
 	timer = 0;
+	if (is_checking_input):
+		MistakeManager.instance.register_mistake();
+		mistake_animation()
 	waiting_to_next_step = false
 
 func enable_dance():
@@ -49,6 +53,7 @@ func disable_dance_if_is_night(is_day: bool):
 	if (!is_day):
 		is_dance = false
 		ui.visible = false
+		is_checking_input = false
 
 func generate_input_label():
 	var rng = RandomNumberGenerator.new()
@@ -74,5 +79,6 @@ func validate_dance(dance: int):
 
 func mistake_animation():
 	mistake_shader.visible = true;
-	await get_tree().create_timer(0.2).timeout
+	if (is_inside_tree()):
+		await self.get_tree().create_timer(0.2).timeout
 	mistake_shader.visible = false;
