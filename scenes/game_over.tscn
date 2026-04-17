@@ -1,5 +1,4 @@
 [gd_scene format=3 uid="uid://cbqjpguvt8gmk"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scripts/Rysia/game_over.gd" id="1_racf3"]
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_wqhvx"]
