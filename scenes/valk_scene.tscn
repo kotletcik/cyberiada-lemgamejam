@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="2_ls6vv"]
 [ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="3_uf0cl"]
 [ext_resource type="Script" uid="uid://8hdpjb43xh8r" path="res://Scripts/Valk/game_manager.gd" id="4_kra62"]
+[ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="5_01i8k"]
 
 [node name="ValkScene" type="Node2D" unique_id=401155208]
 
@@ -31,3 +32,7 @@ script = ExtResource("4_kra62")
 camera_positions = Array[Vector2]([Vector2(0, 0), Vector2(256, 0), Vector2(-256, 0)])
 camera = NodePath("../Camera2D")
 metadata/_custom_type_script = "uid://8hdpjb43xh8r"
+
+[node name="Cycle_manager" type="Node" parent="." unique_id=597523848]
+script = ExtResource("5_01i8k")
+metadata/_custom_type_script = "uid://cmgymhsfy7lki"
