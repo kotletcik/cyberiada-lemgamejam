@@ -442,7 +442,6 @@ stream = ExtResource("19_58gk3")
 [node name="task_done_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=507829313]
 stream = ExtResource("20_to7gp")
 [connection signal="body_entered" from="Ending Trigger" to="Ending Trigger" method="_on_body_entered"]
-bus = &"SFX"
 
 [node name="lights_off_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1528277207]
 stream = ExtResource("21_adb74")
