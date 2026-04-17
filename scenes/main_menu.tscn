@@ -12,8 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cnebpot0w1yov" path="res://Assets/UI/x.png" id="11_flqon"]
 [ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 [ext_resource type="Script" path="res://Scripts/Valk/set_cursor_on_load.gd" id="12_flqon"]
-[ext_resource type="Script" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
+[ext_resource type="Script" uid="uid://clathypbpklmf" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
 [ext_resource type="AudioStream" uid="uid://djn2mgqpm7jg0" path="res://Assets/Audio/PsychoMenu.mp3" id="13_1ajci"]
+[ext_resource type="AudioStream" uid="uid://b0fnmdpfao8vh" path="res://Assets/Audio/buttonclick.mp3" id="14_5pajh"]
+[ext_resource type="AudioStream" uid="uid://2u35b4y83xfx" path="res://Assets/Audio/buttonhover.mp3" id="15_j7ex8"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
@@ -253,6 +255,14 @@ stream = ExtResource("13_1ajci")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1895308589]
+stream = ExtResource("14_5pajh")
+bus = &"SFX"
+
+[node name="ButtonHoverSFX" type="AudioStreamPlayer" parent="SoundManager" unique_id=1527250996]
+stream = ExtResource("15_j7ex8")
+bus = &"SFX"
 
 [node name="CursorOnLoad" type="Node" parent="." unique_id=906491640]
 script = ExtResource("12_flqon")
