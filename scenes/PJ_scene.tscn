@@ -42,6 +42,23 @@ id = 6
 position = Vector2(0, 4)
 id = 7
 
+[node name="enter" type="Node2D" parent="Level" unique_id=1075077146]
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/enter" unique_id=1231147012]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("7_6merk")
+
+[node name="exit" type="Node2D" parent="Level" unique_id=1605304078]
+position = Vector2(0, 120)
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/exit" unique_id=1744189795]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("7_6merk")
+
 [node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
 script = ExtResource("2_gpest")
 dances = [NodePath("Dance1")]
@@ -49,7 +66,7 @@ aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../
 
 [node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
 script = ExtResource("3_6merk")
-path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(8, 12), Vector2(4, 12), Vector2(0, 12)])
+path = Array[Vector2]([Vector2(0, 0), Vector2(40, 0), Vector2(80, 0), Vector2(80, 40), Vector2(80, 80), Vector2(80, 120), Vector2(40, 120), Vector2(0, 120)])
 dance_name = "Run"
 
 [node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=2020204009]
@@ -64,12 +81,12 @@ script = ExtResource("4_lkq0u")
 [node name="Dance manager" type="Node2D" parent="." unique_id=1749687511]
 script = ExtResource("5_r3keh")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420116724]
-scale = Vector2(0.045, 0.045)
+[node name="bg" type="Sprite2D" parent="." unique_id=1420116724]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_gpest")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
-zoom = Vector2(10.825, 10.825)
+zoom = Vector2(1.28, 1.28)
 
 [node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
 z_index = 1
