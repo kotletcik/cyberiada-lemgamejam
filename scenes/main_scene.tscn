@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="2_rt2n2"]
 [ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="3_c16ls"]
 [ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="4_18nlu"]
+[ext_resource type="Script" uid="uid://eyy48npnvxij" path="res://Scripts/Valk/game_over_trigger.gd" id="4_adb74"]
 [ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="5_4w45t"]
 [ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="5_c1pb6"]
 [ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="6_r6p65"]
@@ -21,6 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="18_adb74"]
 [ext_resource type="AudioStream" uid="uid://qhybc5u6ahis" path="res://Assets/Audio/YouLose.mp3" id="19_58gk3"]
 [ext_resource type="AudioStream" uid="uid://drbao06dgkox1" path="res://Assets/Audio/TaskDone.mp3" id="20_to7gp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdqt8"]
+size = Vector2(4.5999975, 3.6000013)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdqt8"]
 
@@ -172,6 +176,16 @@ position = Vector2(296, 154)
 script = ExtResource("3_c16ls")
 black_shader = NodePath("../Camera2D/black_shader")
 
+[node name="Ending Trigger" type="Area2D" parent="." unique_id=1516972844]
+position = Vector2(319.99997, 163)
+scale = Vector2(10, 10)
+script = ExtResource("4_adb74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ending Trigger" unique_id=609175819]
+position = Vector2(0.20000267, 0.19999886)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_xdqt8")
+
 [node name="TaskManager" type="Node" parent="." unique_id=531460015 node_paths=PackedStringArray("scene_tasks")]
 script = ExtResource("4_18nlu")
 generated_tasks = Array[int]([0, 0, 0])
@@ -224,6 +238,7 @@ position = Vector2(0, 4)
 id = 7
 
 [node name="enter" type="Node2D" parent="Level" unique_id=1138617077]
+position = Vector2(-277.99997, -71.99999)
 scale = Vector2(10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/enter" unique_id=44877327]
@@ -232,7 +247,7 @@ scale = Vector2(0.007, 0.007)
 texture = ExtResource("7_si52b")
 
 [node name="exit" type="Node2D" parent="Level" unique_id=1706696121]
-position = Vector2(0, 120)
+position = Vector2(319.99997, 163)
 scale = Vector2(10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/exit" unique_id=980552473]
@@ -258,12 +273,6 @@ visible = false
 modulate = Color(1, 1, 1, 0.4117647)
 scale = Vector2(1.695, 1.695)
 texture = ExtResource("9_xdqt8")
-
-[node name="Debug" type="Sprite2D" parent="." unique_id=575956897]
-z_index = 1
-position = Vector2(-140.00003, 0)
-scale = Vector2(0.025, 0.025)
-texture = ExtResource("7_si52b")
 
 [node name="GameManager" type="Node" parent="." unique_id=280952115 node_paths=PackedStringArray("camera")]
 script = ExtResource("9_r6p65")
@@ -413,3 +422,5 @@ stream = ExtResource("19_58gk3")
 
 [node name="task_done_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=507829313]
 stream = ExtResource("20_to7gp")
+
+[connection signal="body_entered" from="Ending Trigger" to="Ending Trigger" method="_on_body_entered"]
