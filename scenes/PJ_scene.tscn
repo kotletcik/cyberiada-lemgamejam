@@ -111,6 +111,7 @@ texture = ExtResource("7_6merk")
 
 [node name="TaskManager" type="Node" parent="." unique_id=1750545070]
 script = ExtResource("9_t37iy")
+generated_tasks = Array[int]([1])
 
 [node name="Player" parent="." unique_id=1444099841 instance=ExtResource("9_egjn3")]
 z_index = 2

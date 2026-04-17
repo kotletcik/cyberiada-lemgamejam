@@ -65,7 +65,10 @@ func generate_next_tasks():
 func complete_task():
 	scene_tasks[completed_tasks_count].visible = false;
 	completed_tasks_count += 1;
-	if(completed_tasks_count % 3 == 0 && completed_tasks_count < 9):
+	if(completed_tasks_count % 3 == 0 && completed_tasks_count < 3):
 		generate_next_tasks()
+	if(completed_tasks_count == scene_tasks.size()):
+		GameManager.instance.game_completed();
+		return;
 	scene_tasks[completed_tasks_count].visible = true;
 		

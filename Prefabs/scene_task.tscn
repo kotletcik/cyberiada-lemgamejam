@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dni2v5w35jgk6"]
+
+[ext_resource type="Texture2D" uid="uid://bh33nx8hedl1s" path="res://Assets/Tasks/zupaobiad1.png" id="1_w2yab"]
+[ext_resource type="Script" uid="uid://c15vj66rsrqyo" path="res://Scripts/Valk/scene_task.gd" id="2_8it0u"]
+[ext_resource type="Texture2D" uid="uid://0ggjf8hed6ut" path="res://Assets/Tasks/zupaobiad.png" id="3_kif5c"]
+
+[node name="Task" type="Sprite2D" unique_id=1434086663 groups=["tasks"]]
+texture_filter = 1
+texture = ExtResource("1_w2yab")
+script = ExtResource("2_8it0u")
+before_state = ExtResource("1_w2yab")
+after_state = ExtResource("3_kif5c")
