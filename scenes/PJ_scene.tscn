@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="2_egjn3"]
 [ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_gpest"]
 [ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="3_6merk"]
-[ext_resource type="PackedScene" uid="uid://dni2v5w35jgk6" path="res://Prefabs/Task.tscn" id="3_r3keh"]
 [ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lkq0u"]
 [ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_gpest"]
 [ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_6merk"]
@@ -14,7 +13,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
 
-[node name="Map" type="Node2D" unique_id=261449112]
+[node name="Map2" type="Node2D" unique_id=261449112]
 
 [node name="Level" type="Node2D" parent="." unique_id=766609530]
 
@@ -126,20 +125,6 @@ scale = Vector2(10, 10)
 z_index = 2
 scale = Vector2(0.007, 0.007)
 texture = ExtResource("7_6merk")
-
-[node name="Tasks" type="Node2D" parent="." unique_id=320304455]
-
-[node name="Task" parent="Tasks" unique_id=360551569 instance=ExtResource("3_r3keh")]
-position = Vector2(-224, -151)
-script = null
-
-[node name="Task2" parent="Tasks" unique_id=1688835264 instance=ExtResource("3_r3keh")]
-position = Vector2(216, 0)
-script = null
-
-[node name="Task3" parent="Tasks" unique_id=1896705387 instance=ExtResource("3_r3keh")]
-position = Vector2(-136, 209)
-script = null
 
 [node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
 script = ExtResource("2_gpest")
