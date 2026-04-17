@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://btonrdha3xtcm" path="res://Assets/Audio/YouWin.mp3" id="5_fufq8"]
 [ext_resource type="Texture2D" uid="uid://bugjo4dujuult" path="res://Assets/Sprites/dancing_queen.png" id="5_tgsk8"]
 [ext_resource type="Texture2D" uid="uid://rk3084ha8sts" path="res://Assets/Sprites/main_menu.png" id="6_80m04"]
+[ext_resource type="Script" uid="uid://bwcj86u2lahwf" path="res://Scripts/Valk/set_cursor_on_load.gd" id="6_cfpfi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bev4"]
+font_size = 64
 
 [node name="YouWon" type="Control" unique_id=285489906]
 layout_mode = 3
@@ -98,3 +102,6 @@ autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=442156011]
 current = true
+
+[node name="CursorOnLoad" type="Node" parent="." unique_id=46954179]
+script = ExtResource("6_cfpfi")
