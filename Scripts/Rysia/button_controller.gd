@@ -5,9 +5,18 @@ extends Control
 
 func open_controls() -> void:
 	add_child(controls)
+	get_node("Controls2/x").pressed.connect(close_controls)
+
+func close_controls() ->void:
+	remove_child(controls)
 
 func open_settings() -> void:
 	add_child(settings)
+	get_node("Settings/x").pressed.connect(close_settings)
+
+func close_settings() -> void:
+	remove_child(settings)
+	
 
 func _switch() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
@@ -23,6 +32,7 @@ func _ready() -> void:
 	get_node("dance").pressed.connect(_switch)
 	get_node("settings").pressed.connect(open_settings)
 	get_node("controls").pressed.connect(open_controls)
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

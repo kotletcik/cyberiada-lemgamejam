@@ -4,7 +4,7 @@ extends Node
 @export var is_day: bool
 var t = true
 
-var bus_id : int = AudioServer.get_bus_index("Music_main")
+var bus_id : int = AudioServer.get_bus_index("Music")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

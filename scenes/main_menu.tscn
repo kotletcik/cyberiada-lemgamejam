@@ -6,23 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cmlcr5xr6cy1y" path="res://Assets/UI/linka.png" id="5_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://dykg67sqyqe08" path="res://Assets/UI/dance.png" id="6_flqon"]
 [ext_resource type="Texture2D" uid="uid://cu2ariuvxf4r4" path="res://Assets/UI/settings.png" id="7_jk1qb"]
-[ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://lx74taqgu4nk" path="res://Assets/UI/exit.png" id="7_rcqid"]
 [ext_resource type="Texture2D" uid="uid://b1v05hejenbhg" path="res://Assets/UI/controls.png" id="8_5dd4i"]
-
-[sub_resource type="GDScript" id="GDScript_lgwnu"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$\"..\"
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="Texture2D" uid="uid://cys10oqwc3gq3" path="res://Assets/UI/background.png" id="9_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://cnebpot0w1yov" path="res://Assets/UI/x.png" id="11_flqon"]
+[ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
@@ -36,6 +24,16 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_jk1qb")
+
+[node name="background_menu" type="TextureRect" parent="." unique_id=1731216900]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 68.0
+offset_top = 8.0
+offset_right = 1221.0
+offset_bottom = 653.0
+texture = ExtResource("9_5dd4i")
+expand_mode = 1
 
 [node name="dance" type="TextureButton" parent="." unique_id=986431484]
 layout_mode = 1
@@ -99,9 +97,9 @@ stretch_mode = 0
 
 [node name="name" type="TextureRect" parent="." unique_id=38478459]
 layout_mode = 0
-offset_left = 112.0
+offset_left = 160.0
 offset_top = -219.0
-offset_right = 1074.0
+offset_right = 1122.0
 offset_bottom = 295.0
 texture = ExtResource("3_5dd4i")
 expand_mode = 1
@@ -152,24 +150,74 @@ texture = ExtResource("8_5dd4i")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = SubResource("GDScript_lgwnu")
 
 [node name="background" type="TextureRect" parent="Settings" unique_id=65759295]
-visible = false
 layout_mode = 0
-offset_left = 96.0
-offset_top = 29.0
-offset_right = 1166.0
-offset_bottom = 629.0
-texture = ExtResource("7_oa1go")
+offset_left = 89.0
+offset_top = 16.0
+offset_right = 1203.0
+offset_bottom = 636.0
+texture = ExtResource("9_5dd4i")
+expand_mode = 1
+
+[node name="x" type="TextureButton" parent="Settings" unique_id=765839316]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 48.0
+offset_right = 1152.0
+offset_bottom = 129.0
+texture_normal = ExtResource("11_flqon")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MusicSettings" type="Control" parent="Settings" unique_id=1362718222]
+anchors_preset = 0
+offset_left = 179.0
+offset_top = 290.0
+offset_right = 1137.0
+offset_bottom = 601.0
+script = ExtResource("11_lgwnu")
+
+[node name="MusicLabel" type="Label" parent="Settings/MusicSettings" unique_id=71077913]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 30.0
+offset_right = 707.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicScrollBar" type="HScrollBar" parent="Settings/MusicSettings" unique_id=1004806495]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 94.0
+offset_right = 839.0
+offset_bottom = 155.0
+min_value = -20.0
+max_value = 5.0
+page = 1.5
 
 [node name="Controls2" type="Control" parent="." unique_id=1114963884]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="background_controls" type="TextureRect" parent="Controls2" unique_id=334850877]
 layout_mode = 0
-offset_right = 1207.0
-offset_bottom = 657.0
-texture = ExtResource("7_oa1go")
+offset_right = 1209.0
+offset_bottom = 650.0
+texture = ExtResource("9_5dd4i")
+expand_mode = 1
+
+[node name="x" type="TextureButton" parent="Controls2" unique_id=1913217224]
+layout_mode = 0
+offset_left = 1115.0
+offset_top = 9.0
+offset_right = 1203.0
+offset_bottom = 90.0
+texture_normal = ExtResource("11_flqon")
+ignore_texture_size = true
+stretch_mode = 0
