@@ -19,9 +19,9 @@ func do_current_action():
 	var  steptime = Cycle_manager.instance.phase_step_duration
 	debug_sprite.global_position = current_alien_action.movement_target_pos
 	velocity = Vector2.ZERO
-	print ("current pos: ", global_position)
-	print ("target pos: ", current_alien_action.movement_target_pos)
-	velocity = direction * (distance/steptime);
+	#print ("current pos: ", global_position)
+	#print ("target pos: ", current_alien_action.movement_target_pos)
+	velocity = direction * (distance/steptime) * speed;
 	#global_position += direction * (_delta * distance/steptime * 100)
 	#print ("delta move: ",(distance))
 	animated_sprite.play(current_alien_action.sprite_name)

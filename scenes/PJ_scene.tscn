@@ -15,29 +15,36 @@
 [node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_rm2fy")]
 
 [node name="Alien2" parent="Level" unique_id=1969406390 instance=ExtResource("1_rm2fy")]
+position = Vector2(4, 0)
 id = 1
 
 [node name="Alien3" parent="Level" unique_id=1952440405 instance=ExtResource("1_rm2fy")]
+position = Vector2(8, 0)
 id = 2
 
 [node name="Alien4" parent="Level" unique_id=2016627882 instance=ExtResource("1_rm2fy")]
+position = Vector2(8, 4)
 id = 3
 
 [node name="Alien5" parent="Level" unique_id=1528270353 instance=ExtResource("1_rm2fy")]
+position = Vector2(8, 8)
 id = 4
 
 [node name="Alien6" parent="Level" unique_id=1905355714 instance=ExtResource("1_rm2fy")]
+position = Vector2(4, 8)
 id = 5
 
 [node name="Alien7" parent="Level" unique_id=408258112 instance=ExtResource("1_rm2fy")]
+position = Vector2(0, 8)
 id = 6
 
 [node name="Alien8" parent="Level" unique_id=573647361 instance=ExtResource("1_rm2fy")]
+position = Vector2(0, 4)
 id = 7
 
 [node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
 script = ExtResource("2_gpest")
-dances = [NodePath("Dance1"), NodePath("Dance2")]
+dances = [NodePath("Dance1")]
 aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8")]
 
 [node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
