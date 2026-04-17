@@ -28,9 +28,8 @@ func _ready() -> void:
 		queue_free();
 
 func _process(delta: float) -> void:
-	player.light_mode = light_mode;
 	timer -= delta;
-	if(!light_mode): return;
+	if(!Cycle_manager.instance.is_day): return;
 	if(player.position.distance_squared_to(safe_zone.position) > distance_sqr):
 		var direction: Vector2 = player.position - safe_zone.position;
 		player.velocity = -direction * 25;

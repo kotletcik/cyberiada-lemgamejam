@@ -3,10 +3,8 @@ class_name PlayerController
 
 @export var speed: float;
 
-@export var light_mode: bool = true;
-
 func _process(delta: float) -> void:
-	if(light_mode):
+	if(Cycle_manager.instance.is_day):
 		var direction: Vector2;
 		direction.x = Input.get_action_strength("Move Right") - Input.get_action_strength("Move Left");
 		direction.y = Input.get_action_strength("Move Backward") - Input.get_action_strength("Move Forward"); 
