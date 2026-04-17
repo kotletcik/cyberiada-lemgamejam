@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://8wrdbefim2cs"]
+
+[ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://b4os3m1mcjaqr" path="res://Assets/UI/name1.png" id="3_5dd4i"]
+[ext_resource type="Script" uid="uid://bwg5h5lyal0c3" path="res://Scripts/Rysia/button_controller.gd" id="3_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cmlcr5xr6cy1y" path="res://Assets/UI/linka.png" id="5_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://dykg67sqyqe08" path="res://Assets/UI/dance.png" id="6_flqon"]
+[ext_resource type="Texture2D" uid="uid://cu2ariuvxf4r4" path="res://Assets/UI/settings.png" id="7_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_oa1go"]
+[ext_resource type="Texture2D" uid="uid://lx74taqgu4nk" path="res://Assets/UI/exit.png" id="7_rcqid"]
+[ext_resource type="Texture2D" uid="uid://b1v05hejenbhg" path="res://Assets/UI/controls.png" id="8_5dd4i"]
+
+[sub_resource type="GDScript" id="GDScript_lgwnu"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$\"..\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Main_menu" type="Control" unique_id=256139611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = 3.0
+offset_right = -53.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_jk1qb")
+
+[node name="dance" type="TextureButton" parent="." unique_id=986431484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = 335.0
+offset_right = -830.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_oa1go")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="settings" type="TextureButton" parent="." unique_id=413348279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 365.0
+offset_top = 419.0
+offset_right = -565.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_oa1go")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="exit" type="TextureButton" parent="." unique_id=585252980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 906.0
+offset_top = 383.0
+offset_right = -22.0
+offset_bottom = -43.59961
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_oa1go")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="controls" type="TextureButton" parent="." unique_id=1005003764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 647.0
+offset_top = 289.0
+offset_right = -286.2387
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_oa1go")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="name" type="TextureRect" parent="." unique_id=38478459]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -219.0
+offset_right = 1074.0
+offset_bottom = 295.0
+texture = ExtResource("3_5dd4i")
+expand_mode = 1
+
+[node name="Linka" type="Sprite2D" parent="." unique_id=1793858037]
+position = Vector2(467, 371.00003)
+scale = Vector2(0.578125, 0.65625)
+texture = ExtResource("5_lgwnu")
+
+[node name="Linka2" type="Sprite2D" parent="." unique_id=927277935]
+show_behind_parent = true
+position = Vector2(751.00006, 293)
+scale = Vector2(0.6265627, 0.5)
+texture = ExtResource("5_lgwnu")
+
+[node name="Linka3" type="Sprite2D" parent="." unique_id=1110056536]
+show_behind_parent = true
+position = Vector2(210.00002, 307)
+scale = Vector2(0.70624995, 0.53437495)
+texture = ExtResource("5_lgwnu")
+
+[node name="Linka4" type="Sprite2D" parent="." unique_id=903651571]
+position = Vector2(1015, 342)
+scale = Vector2(0.6406248, 0.5875001)
+texture = ExtResource("5_lgwnu")
+
+[node name="Dance" type="Sprite2D" parent="." unique_id=1111956009]
+position = Vector2(205, 440)
+scale = Vector2(2.7890625, 2.4531248)
+texture = ExtResource("6_flqon")
+
+[node name="Exit" type="Sprite2D" parent="." unique_id=1179013866]
+position = Vector2(1017, 501)
+scale = Vector2(4.203125, 2.484375)
+texture = ExtResource("7_rcqid")
+
+[node name="Settings2" type="Sprite2D" parent="." unique_id=2118628154]
+position = Vector2(472.00003, 524)
+scale = Vector2(3.2812498, 2.9843752)
+texture = ExtResource("7_jk1qb")
+
+[node name="Controls" type="Sprite2D" parent="." unique_id=2131292048]
+position = Vector2(754, 401)
+scale = Vector2(2.8125007, 2.578125)
+texture = ExtResource("8_5dd4i")
+
+[node name="Settings" type="Control" parent="." unique_id=546266422]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_lgwnu")
+
+[node name="background" type="TextureRect" parent="Settings" unique_id=65759295]
+visible = false
+layout_mode = 0
+offset_left = 96.0
+offset_top = 29.0
+offset_right = 1166.0
+offset_bottom = 629.0
+texture = ExtResource("7_oa1go")
+
+[node name="Controls2" type="Control" parent="." unique_id=1114963884]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background_controls" type="TextureRect" parent="Controls2" unique_id=334850877]
+layout_mode = 0
+offset_right = 1207.0
+offset_bottom = 657.0
+texture = ExtResource("7_oa1go")
