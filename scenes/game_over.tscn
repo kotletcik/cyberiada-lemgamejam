@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d2sah1utxhcth"]
+[gd_scene format=3 uid="uid://cbqjpguvt8gmk"]
 
 [ext_resource type="Script" path="res://Scripts/Rysia/game_over.gd" id="1_racf3"]
 [ext_resource type="Texture2D" uid="uid://fos12yadrkvs" path="res://Assets/UI/kula_final.png" id="1_wqhvx"]
@@ -103,5 +103,5 @@ script = ExtResource("6_v3hpu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1210872591]
 stream = ExtResource("5_7m3ot")
-volume_db = -10.0
+volume_db = -30.0
 autoplay = true
