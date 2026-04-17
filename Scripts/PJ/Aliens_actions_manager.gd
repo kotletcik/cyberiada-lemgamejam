@@ -17,8 +17,8 @@ func _ready():
 		instance.queue_free()
 	instance = self
 	EventBus.step_is_past.connect(give_action_to_aliens)
-	EventBus.light_is_switched.connect(change_dance_randomly)
-	change_dance_randomly(true)
+	EventBus.light_is_switched.connect(change_dance_to_next)
+	change_dance_to_next(true)
 	
 func give_action_to_aliens():
 	for alien in aliens:
@@ -37,9 +37,16 @@ func change_dance_randomly(empty: bool):
 	var number = randi_range(0, dances.size() - 1)
 	var new_dance = dances[number]
 	print (number)
+	current_dance = new_dance
 	current_aliens_path = new_dance.path
 	current_dance_name = new_dance.dance_name
 	is_static = new_dance.is_static
 
-func change_dance_to_next():
+func change_dance_to_next(empty:bool):
 	var index = (dances.find(current_dance) + 1) % dances.size()
+	var new_dance = dances[index]
+	print (index)
+	current_dance = new_dance
+	current_aliens_path = new_dance.path
+	current_dance_name = new_dance.dance_name
+	is_static = new_dance.is_static
