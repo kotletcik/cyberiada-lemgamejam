@@ -11,6 +11,8 @@ var bus_id : int = AudioServer.get_bus_index("Music")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if(instance == null):
+		instance = self;
 	#is_day = Cycle_manager.instance.is_day
 	is_day = true
 	
@@ -33,7 +35,7 @@ func effects_switch(on: bool):
 			AudioServer.set_bus_effect_enabled(bus_id, i, false)
 
 func play_sound_task_done():
-	$task_done_sfx.play()
+	get_node("task_done_sfx").play()
 
 func play_sound_you_win():
 	$you_win_sfx.play()

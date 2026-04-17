@@ -64,6 +64,7 @@ func generate_next_tasks():
 
 func complete_task():
 	scene_tasks[completed_tasks_count].visible = false;
+	SoundManager.instance.play_sound_task_done();
 	completed_tasks_count += 1;
 	if(completed_tasks_count % 3 == 0 && completed_tasks_count < 3):
 		generate_next_tasks()
