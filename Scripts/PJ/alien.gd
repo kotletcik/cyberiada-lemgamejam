@@ -8,6 +8,7 @@ var is_static: bool
 #@export var debug_sprite: Sprite2D
 @export var id: int
 var _delta 
+var dance_move: String
 
 func _physics_process(delta: float) -> void:
 	#debug_sprite.global_position = debug_sprite.global_position
@@ -40,4 +41,4 @@ func do_current_action():
 	#global_position += direction * (_delta * distance/steptime * 100)
 	#print ("delta move: ",(distance))
 	if (animated_sprite != null):
-		animated_sprite.play(current_alien_action.sprite_name)
+		animated_sprite.play(dance_move)
