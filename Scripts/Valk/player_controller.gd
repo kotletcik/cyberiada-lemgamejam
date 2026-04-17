@@ -43,20 +43,10 @@ func _process(delta: float) -> void:
 		move_and_slide();
 	else:
 		if(Input.is_action_just_pressed("Move Forward")):
-			validate_dance(0);
+			Dance_manager.instance.validate_dance(0);
 		if(Input.is_action_just_pressed("Move Backward")):
-			validate_dance(1);
+			Dance_manager.instance.validate_dance(1);
 		if(Input.is_action_just_pressed("Move Left")):
-			validate_dance(2);
+			Dance_manager.instance.validate_dance(2);
 		if(Input.is_action_just_pressed("Move Right")):
-			validate_dance(3);
-
-func validate_dance(dance: int):
-	#chwilowo random
-	var rng = RandomNumberGenerator.new()
-	var rand: int = rng.randi_range(0, 3);
-
-	if(dance != rand):
-		MistakeManager.instance.register_mistake();
-	else:
-		print("correct");
+			Dance_manager.instance.validate_dance(3);
