@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://drbao06dgkox1" path="res://Assets/Audio/TaskDone.mp3" id="20_to7gp"]
 [ext_resource type="AudioStream" uid="uid://b2bwhh61b68fk" path="res://Assets/Audio/switchlightoff.mp3" id="21_adb74"]
 [ext_resource type="AudioStream" uid="uid://vva4hsvjtyhl" path="res://Assets/Audio/switchlighton.mp3" id="22_58gk3"]
+[ext_resource type="Script" uid="uid://bwcj86u2lahwf" path="res://Scripts/Valk/set_cursor_on_load.gd" id="26_6p3nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdqt8"]
 size = Vector2(4.5999975, 3.6000013)
@@ -441,12 +442,15 @@ stream = ExtResource("19_58gk3")
 
 [node name="task_done_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=507829313]
 stream = ExtResource("20_to7gp")
-[connection signal="body_entered" from="Ending Trigger" to="Ending Trigger" method="_on_body_entered"]
 
 [node name="lights_off_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1528277207]
 stream = ExtResource("21_adb74")
-bus = &"SFX"
 
 [node name="lights_on_sfx" type="AudioStreamPlayer" parent="SoundManager" unique_id=1790868593]
 stream = ExtResource("22_58gk3")
-bus = &"SFX"
+
+[node name="CursorOnLoad" type="Node" parent="." unique_id=1455969572]
+script = ExtResource("26_6p3nn")
+cursor_locked = true
+
+[connection signal="body_entered" from="Ending Trigger" to="Ending Trigger" method="_on_body_entered"]
