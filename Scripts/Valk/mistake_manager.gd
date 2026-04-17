@@ -8,8 +8,6 @@ static var instance: MistakeManager;
 @export var safe_zone: Node2D;
 @export var safe_zone_distance: float;
 
-@export var light_mode: bool;
-
 @export var mistake_timer: float;
 
 var timer: float;

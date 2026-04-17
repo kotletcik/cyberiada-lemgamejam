@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://qyneajmtibv2"]
+
+[ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="1_2o60n"]
+[ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="1_cag71"]
+[ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_ytw5m"]
+[ext_resource type="Script" path="res://Scripts/PJ/Alien_dance.gd" id="3_2o60n"]
+[ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lhrft"]
+[ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="5_gnoca"]
+[ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_233kc"]
+[ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_k3vpi"]
+[ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="8_ytw5m"]
+
+[node name="Map" type="Node2D" unique_id=261449112]
+
+[node name="MistakeManager" type="Node" parent="." unique_id=444837127 node_paths=PackedStringArray("player", "safe_zone")]
+script = ExtResource("1_2o60n")
+player = NodePath("../Player")
+safe_zone = NodePath("../Level/Alien")
+safe_zone_distance = 5.0
+mistake_timer = 5.0
+metadata/_custom_type_script = "uid://bud8t0ommmhrf"
+
+[node name="Level" type="Node2D" parent="." unique_id=766609530]
+
+[node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_cag71")]
+
+[node name="Alien2" parent="Level" unique_id=1969406390 instance=ExtResource("1_cag71")]
+position = Vector2(4, 0)
+id = 1
+
+[node name="Alien3" parent="Level" unique_id=1952440405 instance=ExtResource("1_cag71")]
+position = Vector2(8, 0)
+id = 2
+
+[node name="Alien4" parent="Level" unique_id=2016627882 instance=ExtResource("1_cag71")]
+position = Vector2(8, 4)
+id = 3
+
+[node name="Alien5" parent="Level" unique_id=1528270353 instance=ExtResource("1_cag71")]
+position = Vector2(8, 8)
+id = 4
+
+[node name="Alien6" parent="Level" unique_id=1905355714 instance=ExtResource("1_cag71")]
+position = Vector2(4, 8)
+id = 5
+
+[node name="Alien7" parent="Level" unique_id=408258112 instance=ExtResource("1_cag71")]
+position = Vector2(0, 8)
+id = 6
+
+[node name="Alien8" parent="Level" unique_id=573647361 instance=ExtResource("1_cag71")]
+position = Vector2(0, 4)
+id = 7
+
+[node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
+script = ExtResource("2_ytw5m")
+dances = [NodePath("Dance1")]
+aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8")]
+
+[node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
+script = ExtResource("3_2o60n")
+path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(4, 8), Vector2(0, 8), Vector2(0, 4)])
+dance_name = "Run"
+moving_speed = 1
+
+[node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=2020204009]
+script = ExtResource("3_2o60n")
+path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(4, 8), Vector2(0, 8), Vector2(0, 4)])
+dance_name = "Idle"
+
+[node name="Cycle manager" type="Node2D" parent="." unique_id=1090998778]
+script = ExtResource("4_lhrft")
+
+[node name="Dance manager" type="Node2D" parent="." unique_id=1749687511]
+script = ExtResource("5_gnoca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420116724]
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("6_233kc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
+zoom = Vector2(10.825, 10.825)
+
+[node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
+z_index = 1
+position = Vector2(-140.00003, 0)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_k3vpi")
+
+[node name="Player" parent="." unique_id=1444099841 instance=ExtResource("8_ytw5m")]
+scale = Vector2(0.1, 0.1)
