@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://3234pgtmr0qr" path="res://Scripts/Sanuuu/music_settings.gd" id="11_lgwnu"]
 [ext_resource type="Script" uid="uid://clathypbpklmf" path="res://Scripts/Sanuuu/menu_audio_manager.gd" id="12_rcqid"]
 [ext_resource type="AudioStream" uid="uid://bl5sbpy1nq05n" path="res://Assets/Audio/PsychoMoves.mp3" id="13_1ajci"]
+[ext_resource type="Script" uid="uid://bwcj86u2lahwf" path="res://Scripts/Valk/set_cursor_on_load.gd" id="12_flqon"]
 
 [node name="Main_menu" type="Control" unique_id=256139611]
 layout_mode = 3
@@ -250,3 +251,5 @@ stream = ExtResource("13_1ajci")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+[node name="CursorOnLoad" type="Node" parent="." unique_id=906491640]
+script = ExtResource("12_flqon")
