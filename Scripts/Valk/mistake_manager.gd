@@ -40,14 +40,14 @@ func _process(delta: float) -> void:
 				register_mistake();
 				timer = mistake_timer;
 			second_timer = push_back_timer;
-		else: 
-			print("in line");
+		#else: 
+			#print("in line");
 
 func register_mistake():
 	mistakes_left -= 1;
 	print(mistakes_left);
-	if(mistakes_left < 1):
-		get_tree().reload_current_scene();
+	#if(mistakes_left < 1):
+		#get_tree().reload_current_scene();
 
 func reset_mistakes_left():
 	mistakes_left = 3;

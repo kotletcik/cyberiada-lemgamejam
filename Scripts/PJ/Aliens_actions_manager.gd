@@ -22,11 +22,13 @@ func _ready():
 	
 func give_action_to_aliens():
 	for alien in aliens:
-		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
 		var alien_target_pos_index = ((alien.id + 1) + Cycle_manager.instance.general_step_counter * int(!is_static)) % current_aliens_path.size()
+		#var alien_target_pos_index = ((alien.id + 1) * current_aliens_path.size() / aliens.size() + (alien.id + 1) * Cycle_manager.instance.current_time_step) % current_aliens_path.size()
 		alien.current_alien_action = Alien_action.new(current_aliens_path[alien_target_pos_index], current_dance_name)
 		alien.is_static = is_static
 		#if (alien_target_pos_index == current_aliens_path.size() - 1):
+		
+			
 		if (alien_target_pos_index == 0):
 			alien.do_current_action_with_teleport()
 		else: 
@@ -43,11 +45,12 @@ func change_dance_randomly(empty: bool):
 	current_dance_name = new_dance.dance_name
 	is_static = new_dance.is_static
 
-func change_dance_to_next(empty:bool):
-	var index = (dances.find(current_dance) + 1) % dances.size()
-	var new_dance = dances[index]
-	print (index)
-	current_dance = new_dance
-	current_aliens_path = new_dance.path
-	current_dance_name = new_dance.dance_name
-	is_static = new_dance.is_static
+func change_dance_to_next(is_day: bool):
+	if (is_day):
+		var index = (dances.find(current_dance) + 1) % dances.size()
+		var new_dance = dances[index]
+		print (index)
+		current_dance = new_dance
+		current_aliens_path = new_dance.path
+		current_dance_name = new_dance.dance_name
+		is_static = new_dance.is_static

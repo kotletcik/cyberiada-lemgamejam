@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dni2v5w35jgk6"]
+
+[ext_resource type="Texture2D" uid="uid://cscyedplmh5cl" path="res://Assets/blue.jpg" id="1_edpc5"]
+[ext_resource type="Script" uid="uid://bxwtgxb6x0h7r" path="res://Scripts/PJ/task.gd" id="1_kfp0i"]
+
+[node name="Task" type="Node2D" unique_id=360551569]
+z_index = 2
+script = ExtResource("1_kfp0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965068769]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_edpc5")

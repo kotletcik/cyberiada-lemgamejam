@@ -15,5 +15,5 @@ metadata/_custom_type_script = "uid://dvotb7rsxllt7"
 shape = SubResource("RectangleShape2D_um8lo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449519558]
-scale = Vector2(16, 32)
+scale = Vector2(192, 384)
 texture = SubResource("PlaceholderTexture2D_um8lo")

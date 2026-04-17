@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_ytw5m"]
 [ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="3_2o60n"]
 [ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lhrft"]
-[ext_resource type="Script" uid="uid://c3sawuom0g65o" path="res://Scripts/PJ/Dance_manager.gd" id="5_gnoca"]
 [ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_233kc"]
 [ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_k3vpi"]
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="8_ytw5m"]
@@ -77,10 +76,7 @@ is_static = true
 [node name="Cycle manager" type="Node2D" parent="." unique_id=1090998778]
 script = ExtResource("4_lhrft")
 
-[node name="Dance manager" type="Node2D" parent="." unique_id=1749687511]
-script = ExtResource("5_gnoca")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1420116724]
+[node name="bg" type="Sprite2D" parent="." unique_id=1420116724]
 scale = Vector2(0.045, 0.045)
 texture = ExtResource("6_233kc")
 
