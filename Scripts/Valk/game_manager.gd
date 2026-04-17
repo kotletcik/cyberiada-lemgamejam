@@ -32,4 +32,7 @@ func switch_level(level: int):
 	current_level = level;
 
 func game_completed():
-	print("game completed");
+	get_tree().change_scene_to_file("res://scenes/you_won.tscn");
+
+func game_over():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn");
