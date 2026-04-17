@@ -7,7 +7,11 @@ class_name GameManager
 
 var current_level: int;
 
+static var instance: GameManager;
+
 func _ready() -> void:
+	if(instance == null):
+		instance = self;
 	current_level = 0;
 
 func _process(delta: float) -> void:
@@ -26,3 +30,9 @@ func switch_level(level: int):
 	MistakeManager.instance.reset_mistakes_left();
 	# TaskManager.instance.generate_next_tasks();
 	current_level = level;
+
+func game_completed():
+	get_tree().change_scene_to_file("res://scenes/you_won.tscn");
+
+func game_over():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn");

@@ -2,36 +2,42 @@
 
 [ext_resource type="Script" uid="uid://bud8t0ommmhrf" path="res://Scripts/Valk/mistake_manager.gd" id="1_2o60n"]
 [ext_resource type="PackedScene" uid="uid://dilwqxgvchdn4" path="res://Prefabs/Alien.tscn" id="1_cag71"]
-[ext_resource type="Texture2D" uid="uid://cpunrcirwp2jd" path="res://Assets/bubble.png" id="2_lhrft"]
+[ext_resource type="Script" uid="uid://b7m87wa3eamyi" path="res://Scripts/PJ/alien.gd" id="2_lhrft"]
 [ext_resource type="Script" uid="uid://jwqqdrrycqyw" path="res://Scripts/PJ/Aliens_actions_manager.gd" id="2_ytw5m"]
 [ext_resource type="Script" uid="uid://iurwafrvu1hs" path="res://Scripts/PJ/Alien_dance.gd" id="3_2o60n"]
 [ext_resource type="Script" uid="uid://cmgymhsfy7lki" path="res://Scripts/PJ/Cycle_manager.gd" id="4_lhrft"]
 [ext_resource type="Texture2D" uid="uid://4xtg5k7tbqhr" path="res://Assets/Placeholders/bg.png" id="6_233kc"]
 [ext_resource type="Texture2D" uid="uid://ceeqa4dk2fq7m" path="res://Assets/redsquare.jpg" id="7_k3vpi"]
+[ext_resource type="Script" uid="uid://mhpgqso5ekuc" path="res://Scripts/Valk/task_manager.gd" id="8_gnoca"]
 [ext_resource type="PackedScene" uid="uid://b5jy6l2sxg2p8" path="res://Prefabs/Player.tscn" id="8_ytw5m"]
+[ext_resource type="Script" uid="uid://c15vj66rsrqyo" path="res://Scripts/Valk/scene_task.gd" id="11_k3vpi"]
+[ext_resource type="Texture2D" uid="uid://bh33nx8hedl1s" path="res://Assets/Tasks/zupaobiad1.png" id="12_q4kjl"]
+[ext_resource type="Texture2D" uid="uid://0ggjf8hed6ut" path="res://Assets/Tasks/zupaobiad.png" id="13_cbrk5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lhrft"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ewn6o"]
 
-[node name="Map" type="Node2D" unique_id=261449112]
+[node name="Map2" type="Node2D" unique_id=261449112]
 
 [node name="Level" type="Node2D" parent="." unique_id=766609530]
 
 [node name="Alien" parent="Level" unique_id=1972185887 instance=ExtResource("1_cag71")]
 
-[node name="AnimatedSprite2D" parent="Level/Alien" index="1" unique_id=1979880464]
-visible = false
-
-[node name="Debug" parent="Level/Alien" index="2" unique_id=1601381241]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Alien" unique_id=885923834]
-material = SubResource("ShaderMaterial_lhrft")
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_lhrft")
-
-[node name="Alien2" parent="Level" unique_id=1969406390 instance=ExtResource("1_cag71")]
+[node name="safezone" type="CharacterBody2D" parent="Level" unique_id=1969406390 node_paths=PackedStringArray("debug_sprite")]
 position = Vector2(4, 0)
-id = 1
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("2_lhrft")
+debug_sprite = NodePath("Debug")
+id = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/safezone" unique_id=1724243456]
+shape = SubResource("CapsuleShape2D_ewn6o")
+
+[node name="Debug" type="Sprite2D" parent="Level/safezone" unique_id=1601381241]
+z_index = 1
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_k3vpi")
 
 [node name="Alien3" parent="Level" unique_id=1952440405 instance=ExtResource("1_cag71")]
 position = Vector2(8, 0)
@@ -47,7 +53,7 @@ id = 4
 
 [node name="Alien6" parent="Level" unique_id=1905355714 instance=ExtResource("1_cag71")]
 position = Vector2(4, 8)
-id = 5
+id = 1
 
 [node name="Alien7" parent="Level" unique_id=408258112 instance=ExtResource("1_cag71")]
 position = Vector2(0, 8)
@@ -57,14 +63,31 @@ id = 6
 position = Vector2(0, 4)
 id = 7
 
+[node name="enter" type="Node2D" parent="Level" unique_id=1075077146]
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/enter" unique_id=1231147012]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("7_k3vpi")
+
+[node name="exit" type="Node2D" parent="Level" unique_id=1605304078]
+position = Vector2(0, 120)
+scale = Vector2(10, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/exit" unique_id=1744189795]
+z_index = 2
+scale = Vector2(0.007, 0.007)
+texture = ExtResource("7_k3vpi")
+
 [node name="Alien actions manager" type="Node2D" parent="." unique_id=456581602 node_paths=PackedStringArray("dances", "aliens")]
 script = ExtResource("2_ytw5m")
-dances = [NodePath("Dance1")]
-aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien2"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8")]
+dances = [NodePath("Dance1"), NodePath("Dance2")]
+aliens = [NodePath("../Level/Alien"), NodePath("../Level/Alien3"), NodePath("../Level/Alien4"), NodePath("../Level/Alien5"), NodePath("../Level/safezone"), NodePath("../Level/Alien6"), NodePath("../Level/Alien7"), NodePath("../Level/Alien8")]
 
 [node name="Dance1" type="Node2D" parent="Alien actions manager" unique_id=2112522264]
 script = ExtResource("3_2o60n")
-path = Array[Vector2]([Vector2(0, 0), Vector2(4, 0), Vector2(8, 0), Vector2(8, 4), Vector2(8, 8), Vector2(8, 12), Vector2(4, 12), Vector2(0, 12)])
+path = Array[Vector2]([Vector2(0, 0), Vector2(40, 0), Vector2(80, 0), Vector2(80, 40), Vector2(80, 80), Vector2(80, 120), Vector2(40, 120), Vector2(0, 120)])
 dance_name = "Run"
 
 [node name="Dance2" type="Node2D" parent="Alien actions manager" unique_id=2020204009]
@@ -77,14 +100,11 @@ is_static = true
 script = ExtResource("4_lhrft")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1420116724]
-scale = Vector2(0.045, 0.045)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_233kc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=269707722]
-zoom = Vector2(10.825, 10.825)
-
-[node name="Player" parent="." unique_id=1444099841 instance=ExtResource("8_ytw5m")]
-scale = Vector2(0.1, 0.1)
+zoom = Vector2(1.28, 1.28)
 
 [node name="Debug" type="Sprite2D" parent="." unique_id=1102709574]
 z_index = 1
@@ -92,13 +112,95 @@ position = Vector2(-140.00003, 0)
 scale = Vector2(0.025, 0.025)
 texture = ExtResource("7_k3vpi")
 
-[node name="MistakeManager" type="Node" parent="." unique_id=1387306347 node_paths=PackedStringArray("player", "safe_zone")]
+[node name="TaskManager" type="Node" parent="." unique_id=1750545070 node_paths=PackedStringArray("scene_tasks")]
+script = ExtResource("8_gnoca")
+generated_tasks = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0])
+scene_tasks = [NodePath("../Task"), NodePath("../Task2"), NodePath("../Task3"), NodePath("../Task4"), NodePath("../Task5"), NodePath("../Task6"), NodePath("../Task7"), NodePath("../Task8"), NodePath("../Task9")]
+
+[node name="Player" parent="." unique_id=1444099841 instance=ExtResource("8_ytw5m")]
+z_index = 2
+position = Vector2(-60.999996, 1.9999999)
+scale = Vector2(0.1, 0.1)
+speed = 100.0
+interaction_range = 5.0
+
+[node name="MistakeManager" type="Node" parent="." unique_id=251915723 node_paths=PackedStringArray("player", "safe_zone")]
 script = ExtResource("1_2o60n")
 player = NodePath("../Player")
-safe_zone = NodePath("../Level/Alien")
-safe_zone_distance = 0.1
+safe_zone = NodePath("../Level/safezone")
+safe_zone_distance = 10.03
 mistake_timer = 2.0
 push_back_timer = 0.5
 metadata/_custom_type_script = "uid://bud8t0ommmhrf"
 
-[editable path="Level/Alien"]
+[node name="Task" type="Sprite2D" parent="." unique_id=2000496856 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-35, -35)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task2" type="Sprite2D" parent="." unique_id=598484701 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(2, -37)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task3" type="Sprite2D" parent="." unique_id=592502482 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(43, -36)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task4" type="Sprite2D" parent="." unique_id=1654917024 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(81, -35)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task5" type="Sprite2D" parent="." unique_id=1263877883 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-76, -36)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task6" type="Sprite2D" parent="." unique_id=21891249 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-94, 0)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task7" type="Sprite2D" parent="." unique_id=634691588 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-87, 38)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task8" type="Sprite2D" parent="." unique_id=2033485495 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-49, 38)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")
+
+[node name="Task9" type="Sprite2D" parent="." unique_id=847225414 groups=["tasks"]]
+texture_filter = 1
+position = Vector2(-3, 37)
+texture = ExtResource("12_q4kjl")
+script = ExtResource("11_k3vpi")
+before_state = ExtResource("12_q4kjl")
+after_state = ExtResource("13_cbrk5")

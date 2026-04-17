@@ -9,6 +9,7 @@ var general_step_counter:int = 0
 @export var light_steps_count = 8;
 @export var dark_steps_count = 8;
 static var instance: Cycle_manager
+@export var black_shader: Sprite2D;
 
 func _ready() -> void:
 	if (instance != null):
@@ -18,6 +19,7 @@ func _ready() -> void:
 	#print (instance)
 
 func _physics_process(delta: float) -> void:
+	black_shader.visible = !is_day
 	if (timer > phase_step_duration):
 		EventBus.step_is_past.emit()
 		current_time_step += 1
